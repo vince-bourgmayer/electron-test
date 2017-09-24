@@ -17,3 +17,5 @@ I used Balsamiq to create the UI proposition. I also played with markdown.
 5. Creation of app entry point: `main.js` and hello world IHM in `index.html`
 
 6. Running app with: `.\node_modules\.bin\electron .`
+
+7. I tried to run basic app with different option to see what would happen. I discovered what is a JumpList.

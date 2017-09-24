@@ -5,15 +5,25 @@ const url = require('url')
 let win
 
 function createWindow(){
-	win = new BrowserWindow({width:662, height:271})
+	win = new BrowserWindow({
+		width:662, 
+		height:271, 
+		resizable:false,
+		fullscreen:false,
+		fullscreenable :false,
+		title: "Password Keeper"
 
+
+	})
+	win.setMenu(null)
 	win.loadURL(url.format({
 		pathname: path.join(__dirname, 'index.html'),
 		protocol: 'file:',
 		slashes:true
 	}))
 
-	win.webContents.openDevTools()
+	//Show Chrome dev tools
+	// win.webContents.openDevTools()
 
 	win.on('closed', () => {
 		win = null
