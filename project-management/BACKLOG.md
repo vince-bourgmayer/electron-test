@@ -21,4 +21,4 @@ _D is Difficulty. The score of difficulty is from 1 to 10 and 10 is the hardest.
 
 # Main Frame 
 _Version 1_
-[logo]: https://github.com/vince-bourgmayer/electron-test/project-management/img/mainframe-v1.png "Just an idea"
+![alt text]: https://github.com/vince-bourgmayer/electron-test/project-management/img/mainframe-v1.png "Just an idea"
