@@ -20,5 +20,6 @@ _P is priority. The score of priority is from 1 to 10 and 1 is the highest prior
 _D is Difficulty. The score of difficulty is from 1 to 10 and 10 is the hardest._
 
 # Main Frame 
-_Version 1_
-![alt text]: https://github.com/vince-bourgmayer/electron-test/project-management/img/mainframe-v1.png "Just an idea"
+_Version 1:_
+
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainFrame-v1.png "Just an idea")
