@@ -16,6 +16,10 @@
 
 6. Installation of slick-carousel via npm: `npm install slick-carousel`. It also install Jquery.
 
+7. Continued to play with UI, Jquery, slick. Looking for add CSS (bootstrap).
+I ran `npm install bootstrap@3`. I'm still looking for how send event from view to main.js.
+I feel that I will look up near React.js or something else.
+
 ## 24/09/17  
 Project creation and first action
 

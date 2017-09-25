@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Password Keeper</title>
 </head>
-<body>
-    <div id="lockedDoors">
-        <div><p>Toto</p></div>
-        <div><p>Toto 1</p></div>
+<body style="max-width: 660px">
+    <div id="lockedDoors" width='660'>
         <div></div>
         <div></div>
-        <div><p>Toto 3</p></div>
+        <div></div>
+        <div></div>
+        <div style="background-color:red"><p>Toto 3</p></div>
         <div></div>
         <div></div>
         <div></div>
@@ -18,8 +18,8 @@
     </div>
 
     <div id="zone-center">
-        <button>Copy login to clipboard</button>
-        <button>Copy password to clipboard</button>
+        <button onclick="alert('click Login!')">Copy login to clipboard</button>
+        <button onclick="alert('Click pwd!')">Copy password to clipboard</button>
         <button>Update information</button>
     </div>
 </body>
@@ -27,31 +27,21 @@
     <table>
         <tr>
             <td>Vincent Bourgmayer</td>
-            <td>Node <script>document.write(process.versions.node)</script></td>
-            <td>Chrome <script>document.write(process.versions.chrome)</script></td>
-            <td>Electron <script>document.write(process.versions.electron)</script></td>
+            <td id="node-version"></script></td>
+            <td id="chrome-version">Chrome <script>document.write(process.versions.chrome)</script></td>
+            <td id="electron-version">Electron <script>document.write(process.versions.electron)</script></td>
         </tr>
     </table>
 <script>
+    //Load Jquery and slick
     window.$ =window.jQuery = require('jquery')
-    let slick = require('slick-carousel')
-    $(document).ready(()=>{
-        $(".lockedDoors").slick({
-            infinite:true,
-                  // the magic 
-            responsive: [
-            {
-                breakpoint: 1024,
-                settings: {slidesToShow: 3,infinite: true}
-            },{
-                breakpoint: 600,
-                settings: { slidesToShow: 2,dots: true}
-            }, {
-              breakpoint: 300,
-              settings: "unslick" // destroys slick 
-            }]
-        })
-        $(".lockedDoors").slick('slickAdd', '<div><p>Toto5</p></div>')
+    require('slick-carousel')
+
+    $(()=>{
+        //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
+        $('#node-version').text("Node "+process.versions.node)
+        //It seems that it setting parameters in slick lock buttons 
+        $('#lockedDoors').slick()
     })
 </script>
 
