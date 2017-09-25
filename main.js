@@ -12,18 +12,16 @@ function createWindow(){
 		fullscreen:false,
 		fullscreenable :false,
 		title: "Password Keeper"
-
-
 	})
 	win.setMenu(null)
 	win.loadURL(url.format({
-		pathname: path.join(__dirname, 'index.html'),
+		pathname: path.join(__dirname, 'UI/index.html'),
 		protocol: 'file:',
 		slashes:true
 	}))
 
 	//Show Chrome dev tools
-	// win.webContents.openDevTools()
+	win.webContents.openDevTools()
 
 	win.on('closed', () => {
 		win = null
