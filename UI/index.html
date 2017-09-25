@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Password Keeper</title>
+    <!-- <link rel="stylesheet" href="css/jquery.flipster.min.css"> -->
+    <link rel="stylesheet" href="css/slick.scss">
+    <link rel="stylesheet" href="css/slick-theme.scss">
 </head>
-<body style="max-width: 660px">
-    <div id="lockedDoors" width='660'>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div style="background-color:red"><p>Toto 3</p></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+<style>
+    footer{background-color: grey; color:white;text-align:center;}
+    .door{background-color: lightblue;text-align: center;font-size: 15px;}
+    #zone-center{height:165px;}
+</style>
+<body style="max-width: 100%; background-color: lightgray">
+    <div id="lockedDoors" style="width:95%;display:block">
+        <div class="door">1</div>
+        <div class="door">2</div>
+        <div class="door">3</div>
+        <div class="door">4</div>
+        <div class="door">5</div>
+        <div class="door">6</div>
+        <div class="door">7</div>
+        <div class="door">8</div>
+        <div class="door">9</div>
     </div>
-
     <div id="zone-center">
-        <button onclick="alert('click Login!')">Copy login to clipboard</button>
-        <button onclick="alert('Click pwd!')">Copy password to clipboard</button>
-        <button>Update information</button>
+        <div id="zone-text"><p>Locked Door name: </p></div>
+        <div id="zone-button">
+            <button onclick="alert('click Login!')">Copy login to clipboard</button>
+            <button onclick="alert('Click pwd!')">Copy password to clipboard</button>
+            <button >Update information</button>
+        </div>
     </div>
 </body>
 <footer>
-    <table>
-        <tr>
-            <td>Vincent Bourgmayer</td>
-            <td id="node-version"></script></td>
-            <td id="chrome-version">Chrome <script>document.write(process.versions.chrome)</script></td>
-            <td id="electron-version">Electron <script>document.write(process.versions.electron)</script></td>
-        </tr>
-    </table>
+    <p>Vincent Bourgmayer | 
+    <span id="node-version"></span> | 
+    <span id="chrome-version">Chrome <script>document.write(process.versions.chrome)</script></span> | 
+    <span id="electron-version">Electron <script>document.write(process.versions.electron)</script></span></p>
 <script>
     //Load Jquery and slick
     window.$ =window.jQuery = require('jquery')
     require('slick-carousel')
-
     $(()=>{
         //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
         $('#node-version').text("Node "+process.versions.node)

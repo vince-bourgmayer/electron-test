@@ -20,6 +20,9 @@
 I ran `npm install bootstrap@3`. I'm still looking for how send event from view to main.js.
 I feel that I will look up near React.js or something else.
 
+8. Found [tuto](https://tutorialzine.com/2015/12/creating-your-first-desktop-app-with-html-js-and-electron) which is a little old but give a way.
+I discover Flipster But in the end slick-carousel is better. I played with css.
+
 ## 24/09/17  
 Project creation and first action
 
