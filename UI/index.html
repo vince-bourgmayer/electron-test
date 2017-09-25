@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Password Keeper</title>
     <!-- <link rel="stylesheet" href="css/jquery.flipster.min.css"> -->
-    <link rel="stylesheet" href="css/slick.scss">
-    <link rel="stylesheet" href="css/slick-theme.scss">
+    <link rel="stylesheet" type="text/css" href="css/slick.scss">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.scss">
 </head>
 <style>
     footer{background-color: grey; color:white;text-align:center;}
     .door{background-color: lightblue;text-align: center;font-size: 15px;}
-    #zone-center{height:165px;}
+    #zone-center{height:150px;}
 </style>
 <body style="max-width: 100%; background-color: lightgray">
     <div id="lockedDoors" style="width:95%;display:block">
@@ -38,17 +38,10 @@
     <span id="node-version"></span> | 
     <span id="chrome-version">Chrome <script>document.write(process.versions.chrome)</script></span> | 
     <span id="electron-version">Electron <script>document.write(process.versions.electron)</script></span></p>
-<script>
-    //Load Jquery and slick
-    window.$ =window.jQuery = require('jquery')
-    require('slick-carousel')
-    $(()=>{
-        //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
-        $('#node-version').text("Node "+process.versions.node)
-        //It seems that it setting parameters in slick lock buttons 
-        $('#lockedDoors').slick()
-    })
-</script>
-
+    <script>
+        //Load Jquery
+        window.$ =window.jQuery = require('jquery')
+    </script>
+    <script src="js/script.js"></script>
 </footer>
 </html>
