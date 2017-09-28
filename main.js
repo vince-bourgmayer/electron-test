@@ -13,7 +13,9 @@ function createWindow(){
 		fullscreenable :false,
 		title: "Password Keeper"
 	})
+	//Disable default menu
 	win.setMenu(null)
+	//Load index.html
 	win.loadURL(url.format({
 		pathname: path.join(__dirname, 'UI/index.html'),
 		protocol: 'file:',

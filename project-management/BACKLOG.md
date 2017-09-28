@@ -6,12 +6,15 @@
 |  1 | User | register new locked door           | I can order my password    | 2 | 2 |
 |  2 | User | register new password              | I can refind them easily   | 1 | 2 |
 |  3 | User | register new login                 | I can refind them easily   | 1 | 2 |
-|  4 | User | protect password from other people | I can sleep on my two ears | 3 | 4 |
-|  5 | User | get password in clipboard          | I don't need to see it     | 1 | 3 |
-|  6 | User | get login in clipboard             | I don't need to see it     | 1 | 3 |
+|  4 | User | protect password from other people | I can sleep on my two ears | 4 | 4 |
+|  5 | User | get password in clipboard          | I don't need to see it     | 3 | 3 |
+|  6 | User | get login in clipboard             | I don't need to see it     | 3 | 3 |
 |  7 | User | change my password or login        | I won't cry if I lost it   | 2 | 2 |
 |  8 | User | search a locked door by name       | to find them quicker       | 4 | 1 |
 |  9 | User | delete a locked door               | to keep only what's needed | 4 | 1 |
+| 10 | User | see my login                       | to remember it             | 1 | 1 |
+| 11 | User | see my password                    | to remember it             | 1 | 1 |
+| 12 | User | select a locked door               | to get login and password  | 2 | 1 |
 
 
 
@@ -23,3 +26,32 @@ _D is Difficulty. The score of difficulty is from 1 to 10 and 10 is the hardest.
 _Version 1:_
 
 ![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainFrame-v1.png "Just an idea")
+
+
+# Steps
+_I can't give many many time on this project so talking about sprint or iteration would be an error.
+To be effective and don't spread my time again and again I will pick up users stories 2 by 2.
+I will change users stories when first are over. This part is a kind of delivery's plan._
+
+ 1. Users stories : 10 and 11
+ 2. Users stories : 12 and 1
+ 3. Users stories : 2 and 3
+ 4. Users stories : 5 and 6
+ 5. Users stories : 4 and 7
+ 6. Users stories : 8 and 9
+
+
+# TODO
+_Here is the list of the current users stories and tasks.
+Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
+
+ + 28/09/2017 18:45 - US 10 - Create mock login
+ + 28/09/2017 18:45 - US 10 - Send login from main process to renderer process
+ + 28/09/2017 18:45 - US 10 - Print login
+ + 28/09/2017 18:45 - US 11 - Create mock password
+ + 28/09/2017 18:45 - US 11 - Send password from main process to renderer process
+ + 28/09/2017 18:45 - US 11 - Print password
+
+# DONE
+_Here is the list of the already done users stories and tasks.
+Description will be: Start date, End date, story's identifier, task (optionnal), subtask(optionnal)_

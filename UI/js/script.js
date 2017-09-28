@@ -9,4 +9,8 @@ $(()=>{
     	slidesToShow:5,
     	centerPadding:'20px'
     })
+
+    let returnData = () => {
+    	
+    }
 })

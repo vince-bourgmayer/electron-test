@@ -1,4 +1,11 @@
 # Resume of projet's progress
+## 28/09/17
+It's not easy to find time those days...
+1. Looking on the web for some subject around electron.js.
+	- It should be possible to use some C++ lib thanks to Node.JS but it will need some adaptation as it's wrote [here](https://nodejs.org/api/addons.html).
+	- To get and send Data between 'view' and 'controller' I have to use IPC object. I found good example [here](https://github.com/crilleengvall/electron-tutorial-app)
+	- Just checked difference between `var`, `let`and `const`in EcmaScript 6 ([ressource](http://putaindecode.io/fr/articles/js/es2015/const-let-var/). I remembered V.Jousse lesson with Scala :)
+
 ## 25/09/17
 
 1. Updating mainframe html
