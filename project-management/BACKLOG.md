@@ -12,8 +12,8 @@
 |  7 | User | change my password or login        | I won't cry if I lost it   | 2 | 2 |
 |  8 | User | search a locked door by name       | to find them quicker       | 4 | 1 |
 |  9 | User | delete a locked door               | to keep only what's needed | 4 | 1 |
-|~~10| User | see my login                       | to remember it             | 1 | 1 |~~
-|~~11| User | see my password                    | to remember it             | 1 | 1 |~~
+| 10 | User | ~~see my login~~                   | to remember it             | 1 | 1 |
+| 11 | User | ~~see my password~~                | to remember it             | 1 | 1 |
 | 12 | User | select a locked door               | to get login and password  | 2 | 1 |
 
 
@@ -33,7 +33,7 @@ _I can't give many many time on this project so talking about sprint or iteratio
 To be effective and don't spread my time again and again I will pick up users stories 2 by 2.
 I will change users stories when first are over. This part is a kind of delivery's plan._
 
- 1. Users stories : 10 and 11
+ 1. ~~Users stories : 10 and 11~~
  2. Users stories : 12 and 1
  3. Users stories : 2 and 3
  4. Users stories : 5 and 6
