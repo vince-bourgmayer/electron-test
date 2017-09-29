@@ -25,11 +25,14 @@
         <div class="door">9</div>
     </div>
     <div id="zone-center">
-        <div id="zone-text"><p>Locked Door name: </p></div>
+        <div id="zone-text"><p>Locked Door name: </p>
+        <p>Login: <span id="login"></span></p>
+        <p>Password: <span id="password"></span></p>
+        </div>
         <div id="zone-button">
             <button onclick="alert('click Login!')">Copy login to clipboard</button>
             <button onclick="alert('Click pwd!')">Copy password to clipboard</button>
-            <button onclick="returnData()">Update information</button>
+            <button >Update information</button>
         </div>
     </div>
 </body>
@@ -41,6 +44,7 @@
     <script>
         //Load Jquery
         window.$ =window.jQuery = require('jquery')
+        const {ipcRenderer} = require('electron')
     </script>
     <script src="js/script.js"></script>
 </footer>

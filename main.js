@@ -1,10 +1,14 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
-
+const jsonify = require('jsonify')
 let win
 
-function createWindow(){
+// const doors = []
+const mockObject = {login:"toto", password:"titi"}
+let mockData = jsonify.stringify(mockObject)
+//function to create mainWindow
+function createMainWindow(){
 	win = new BrowserWindow({
 		width:662, 
 		height:271, 
@@ -21,16 +25,22 @@ function createWindow(){
 		protocol: 'file:',
 		slashes:true
 	}))
+	//send data to HTML
+	win.webContents.on('did-finish-load', () =>{
+		win.webContents.send('data', mockData)
+	})
 
 	//Show Chrome dev tools
 	// win.webContents.openDevTools()
 
+	//free memory when windows is closed
 	win.on('closed', () => {
 		win = null
 	})
 }
 
-app.on('ready', createWindow)
+
+app.on('ready', createMainWindow)
 
 app.on('window-all-closed', () => {
 	if(process.platform !== 'darwin')
@@ -39,5 +49,5 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
 	if(win === null)
-		createWindow()
+		createMainWindow()
 })

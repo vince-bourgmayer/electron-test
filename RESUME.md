@@ -1,4 +1,26 @@
 # Resume of projet's progress
+## 29/09/17
+Let's go! From now I will follow my delivery plan!
+First step: Let see login and password.
+1. App should load login and password from db or file (I'll decide later)
+So first task is to mock login and password in main.js. 
+Todo that, I will create a simple object `{login:'toto', password:'titi'}`
+2. Next step is to send data from main process to renderer process.
+I'll use IPCMain in main.js to sendData but it is possible to use [another way](https://electron.atom.io/docs/api/web-contents/#webcontentssendchannel-arg1-arg2-)
+___Question: should I use synchronous or asynchronous way?___
+I will do both to see. So I'll decide later.
+I use [doc's example](https://electron.atom.io/docs/api/ipc-main/).
+
+3. Replaced use of IPCMain by (instance of BrowserWindow).webContents.send(channel, msg)
+
+4. Getting mockData in UI
+Go to UI/index.html and use IPC for Renderer process.
+I also changed UI/js/script.js. I thought I can use `JSON.parse(mockData)` natively but it didn't work. So I gave a look in node_modules and discover jsonify module. Now it works!
+
+5. Add HTML to print data in UI.
+
+6. Added a little in late the stringification of mockObject. Before I did mockData with json. Now it is a real JS Object transformed in json.
+
 ## 28/09/17
 It's not easy to find time those days...
 1. Looking on the web for some subject around electron.js.

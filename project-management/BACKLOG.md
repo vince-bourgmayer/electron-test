@@ -12,8 +12,8 @@
 |  7 | User | change my password or login        | I won't cry if I lost it   | 2 | 2 |
 |  8 | User | search a locked door by name       | to find them quicker       | 4 | 1 |
 |  9 | User | delete a locked door               | to keep only what's needed | 4 | 1 |
-| 10 | User | see my login                       | to remember it             | 1 | 1 |
-| 11 | User | see my password                    | to remember it             | 1 | 1 |
+|~~10| User | see my login                       | to remember it             | 1 | 1 |~~
+|~~11| User | see my password                    | to remember it             | 1 | 1 |~~
 | 12 | User | select a locked door               | to get login and password  | 2 | 1 |
 
 
@@ -45,13 +45,18 @@ I will change users stories when first are over. This part is a kind of delivery
 _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
- + 28/09/2017 18:45 - US 10 - Create mock login
- + 28/09/2017 18:45 - US 10 - Send login from main process to renderer process
- + 28/09/2017 18:45 - US 10 - Print login
- + 28/09/2017 18:45 - US 11 - Create mock password
- + 28/09/2017 18:45 - US 11 - Send password from main process to renderer process
- + 28/09/2017 18:45 - US 11 - Print password
+ + 29/09/2017 21:09 - US 12 - Select a locked door - 
+ + 29/09/2017 21:09 - US 1 - Register a new locked door - 
 
 # DONE
 _Here is the list of the already done users stories and tasks.
 Description will be: Start date, End date, story's identifier, task (optionnal), subtask(optionnal)_
+
+ + 28/09/2017 18:45 - 29/09/2017 21:07 - US 10 - Create mock login object
+ + 29/09/2017 21:04 - 29/09/2017 21:07 - US 10 - transform mock login object in JSON to send it
+ + 28/09/2017 18:45 - 29/09/2017 21:07 - US 10 - Send login from main process to renderer process
+ + 28/09/2017 18:45 - 29/09/2017 21:07 - US 10 - Print login
+ + 28/09/2017 18:45 - 29/09/2017 21:07 - US 11 - Create mock password object
+ + 29/09/2017 21:04 - 29/09/2017 21:07 - US 11 - transform mock password object in JSON to send it
+ + 28/09/2017 18:45 - 29/09/2017 21:07 - US 11 - Send password from main process to renderer process
+ + 28/09/2017 18:45 - 29/09/2017 21:07 - US 11 - Print password
