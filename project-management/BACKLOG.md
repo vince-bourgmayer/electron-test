@@ -45,8 +45,16 @@ I will change users stories when first are over. This part is a kind of delivery
 _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
- + 29/09/2017 21:09 - US 12 - Select a locked door - 
- + 29/09/2017 21:09 - US 1 - Register a new locked door - 
+ + 29/09/2017 21:58 - US 12 - Select a locked door - Create a mock object containing a list of locked door
+ + 29/09/2017 21:58 - US 12 - Select a locked door - replace previous mockObject by the one which contains locked door
+ + 29/09/2017 21:58 - US 12 - Select a locked door - Update UI - Generate graphical representation of locked door with slick
+ + 29/09/2017 21:58 - US 12 - Select a locked door - Update UI - Observe slick object on change to update printed data
+ + ~~29/09/2017 21:58 - US 1 - Register a new locked door - define how to store locked door~~
+ + ~~29/09/2017 21:58 - US 1 - Register a new locked door - Install solution to store locked door~~
+ + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - Adding HTML Button
+ + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - Create modal window
+ + 29/09/2017 21:58 - US 1 - Register a new locked door - Send Data from renderer process to Main process
+ + 29/09/2017 21:58 - US 1 - Register a new locked door - store data in main process
 
 # DONE
 _Here is the list of the already done users stories and tasks.
@@ -60,3 +68,5 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 29/09/2017 21:04 - 29/09/2017 21:07 - US 11 - transform mock password object in JSON to send it
  + 28/09/2017 18:45 - 29/09/2017 21:07 - US 11 - Send password from main process to renderer process
  + 28/09/2017 18:45 - 29/09/2017 21:07 - US 11 - Print password
+ + 29/09/2017 21:47 - 29/09/2017 21:58 - US 1 - Register a new locked door - define how to store locked door
+ + 29/09/2017 21:58 - 29/09/2017 22:08 - US 1 - Register a new locked door - Install solution to store locked door

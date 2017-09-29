@@ -21,6 +21,13 @@ I also changed UI/js/script.js. I thought I can use `JSON.parse(mockData)` nativ
 
 6. Added a little in late the stringification of mockObject. Before I did mockData with json. Now it is a real JS Object transformed in json.
 
+7. Update Backlog.md. Look on how to store locked door with login and password.
+_NB:_ `lockedDoor = {name, (opt)url, login, password}`
+I Choose to use SQLite for lightweight and because I won't store too many values.A single file could also be used but it is interesting to learn to link Node.js to another database than MongoDB. Let's go!
+Needed information to use SQLite and Node.js are [here](http://www.sqlitetutorial.net/sqlite-nodejs/)
+
+8. Installing SQLite 3 with `npm install sqlite3`. Everything seemed to work until i launched apps. It has crashed many times so I search for solution on the web and it seems that there is a probleme between electron and sqlite. I will create a new branche to try [this](https://www.laurivan.com/make-electron-work-with-sqlite3/)
+
 ## 28/09/17
 It's not easy to find time those days...
 1. Looking on the web for some subject around electron.js.
