@@ -2,25 +2,23 @@ const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
 const jsonify = require('jsonify')
-const sqlite3 = require('sqlite3').verbose()
-
 
 const mockObject = {login:"toto", password:"titi"}
 let mockData = jsonify.stringify(mockObject)
 let win
 //Open or create (if not exist) Database
-let db = new sqlite3.Database('./db/keychain.db')
+// let db = new sqlite3.Database('./db/keychain.db')
 
-function loadLockedDoor(){
-	let sql = "SELECT Name name, Url url, Login login, Password password FROM lockeddoor ORDER BY name"
-	db.all(sql,'',(err, rows ) => {
-	    if (err) {
-		    console.log(err.message)
-		    return null
-		}
-		return rows
-	});	
-}
+// function loadLockedDoor(){
+// 	let sql = "SELECT Name name, Url url, Login login, Password password FROM lockeddoor ORDER BY name"
+// 	db.all(sql,'',(err, rows ) => {
+// 	    if (err) {
+// 		    console.log(err.message)
+// 		    return null
+// 		}
+// 		return rows
+// 	});	
+// }
 
 //function to create mainWindow
 function createMainWindow(){
@@ -41,7 +39,7 @@ function createMainWindow(){
 		slashes:true
 	}))
 
-	let keychain = loadLockedDoor()
+	// let keychain = loadLockedDoor()
 
 	//send data to HTML
 	win.webContents.on('did-finish-load', () =>{
