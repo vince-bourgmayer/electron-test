@@ -2,12 +2,13 @@ const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
 const jsonify = require('jsonify')
+const Datastore = require('nedb')
 
 const mockObject = {login:"toto", password:"titi"}
 let mockData = jsonify.stringify(mockObject)
 let win
 //Open or create (if not exist) Database
-// let db = new sqlite3.Database('./db/keychain.db')
+let db = new Datastore({filename: 'db/keychain.db', autoload: true});
 
 // function loadLockedDoor(){
 // 	let sql = "SELECT Name name, Url url, Login login, Password password FROM lockeddoor ORDER BY name"

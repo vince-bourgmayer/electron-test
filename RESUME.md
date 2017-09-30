@@ -3,6 +3,11 @@
 
 I erased the branch to test SQLite3 and I lost everything I've done on it but I didn't expect to loose commit and trace of what I've done... No way, I just have to remberer that SQLite3 doesn't work with electron.js or it needs more steps with node-gyp to recompile source because SQLite doesn't have correct header to work with electron.js or something like that. So I'll use another db. I also learned a little more about 'in memory' db.
 
+Now i'll try [NeDB](http://stackabuse.com/nedb-a-lightweight-javascript-database/)
+I juste wonder if I should call nedb in main process or in renderer process...
+
+
+
 ## 29/09/17
 Let's go! From now I will follow my delivery plan!
 First step: Let see login and password.
