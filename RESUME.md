@@ -1,11 +1,21 @@
 # Resume of projet's progress
-## 30/09/17
 
+## 31/09/2017
+I read:
+- some articles about testing with mocha
+	1. [a guide about mocha](http://samwize.com/2014/02/08/a-guide-to-mochas-describe-it-and-setup-hooks/)
+		_NB: describe() serve to group tests cases or other groups_
+	2. [mocha's doc](https://mochajs.org/#arrow-functions)
+	3. [should.js](https://github.com/shouldjs/should.js)
+- [a guide about docco](http://ashkenas.com/docco/)
+
+1. I want to unit test access to DB.
+
+## 30/09/17
 I erased the branch to test SQLite3 and I lost everything I've done on it but I didn't expect to loose commit and trace of what I've done... No way, I just have to remberer that SQLite3 doesn't work with electron.js or it needs more steps with node-gyp to recompile source because SQLite doesn't have correct header to work with electron.js or something like that. So I'll use another db. I also learned a little more about 'in memory' db.
 
 Now i'll try [NeDB](http://stackabuse.com/nedb-a-lightweight-javascript-database/)
 I juste wonder if I should call nedb in main process or in renderer process...
-
 
 
 ## 29/09/17
