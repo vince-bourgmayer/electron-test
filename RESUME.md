@@ -2,6 +2,19 @@
 ## 02/10/2017
 I don't need to use DB in main process but in renderer process. So i commented previous code in main.js
 then I started to call nedb in script.js
+
+1. I created a function to get html from locked door object for slick. I did unit test to create this function but i only use two basic case so i'm not really happy of it... But I understand a little better how to use it.
+At this step I wondered if :
+	+ I should use jquery to move "addDoorButton" when slide change.
+	or
+	+ I should but a button on each slide and hide them except if it is the current slide.
+
+_I choose second way, but it 's not a closed question_
+
+2. I made many modification on project today. I changed dir structure, changed where to use DB, ...
+
+3. I updated backlog.md because task previously created weren't covering project.
+
 ## 31/09/2017
 I read:
 - some articles about testing with mocha
@@ -14,7 +27,7 @@ I read:
 - [a guide about docco](http://ashkenas.com/docco/)
 
 ~~1. I want to test access to DB.~~
-I did test with mocha and expect.js in test/test.js
+I do test with mocha and expect.js in `/test/*`
 
 ## 30/09/17
 I erased the branch to test SQLite3 and I lost everything I've done on it but I didn't expect to loose commit and trace of what I've done... No way, I just have to remberer that SQLite3 doesn't work with electron.js or it needs more steps with node-gyp to recompile source because SQLite doesn't have correct header to work with electron.js or something like that. So I'll use another db. I also learned a little more about 'in memory' db.
