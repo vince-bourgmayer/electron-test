@@ -2,8 +2,15 @@
 $(()=>{
 	require('slick-carousel')
     const Datastore = require('nedb')
-    const jsonify = require('jsonify')
+    // const jsonify = require('jsonify')
+    /**function **/
+    function doorToHtml(door){
+        const addButtonHtml ="<div class='btn-in-carousel'><button class='btn-add-door'>New door...</button></div>"
+        const removeButtonHtml="<div class='btn-in-carousel'><button class='btn-remove-btn' id='"+door.name+"'>delete</button></div>"
+        return "<div class='door'>"+addButtonHtml+"<div><h3>"+door.name+"</h3></div>"+removeButtonHtml+"</div>"
+    }
 
+    //Load Data
     let db = new Datastore({filename: 'keychain.db', autoload: true});
     db.loadDatabase(function(err){
         if(err){
@@ -16,23 +23,22 @@ $(()=>{
             console.log(err.message)
     })
     //@To remove when over
-    db.insert([{name:'toto'},{name:'titi'}, {name:'toutou'}, {name:'tata'}], function(err, newDoc){
+    db.insert([{name:'toto'},{name:'toto'},{name:'toto'},{name:'toto'},{name:'titi'}, {name:'toutou'}, {name:'tata'}], function(err, newDoc){
         console.log('data inserted')
     })
-
 
     db.find({}, function(err,docs){
         let slideIndex = 0
         for(doc of docs){
-            $('#lockedDoors').append('<div class="door">'+(slideIndex++)+'</div>')
+            $('#lockedDoors').append(doorToHtml(doc))
         }
         $('#lockedDoors').slick({
             centerMode:true,
             slidesToShow:5,
-            centerPadding:'20px'
+            focusOnSelect: true
         })
-        $('.slick-current').append('<button>Remove</button>')
     })
+
 
     //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
     $('#node-version').text("Node "+process.versions.node)

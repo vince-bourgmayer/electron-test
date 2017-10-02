@@ -45,16 +45,13 @@ I will change users stories when first are over. This part is a kind of delivery
 _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
- + 29/09/2017 21:58 - US 12 - Select a locked door - Create a mock object containing a list of locked door
- + 29/09/2017 21:58 - US 12 - Select a locked door - replace previous mockObject by the one which contains locked door
+
  + 29/09/2017 21:58 - US 12 - Select a locked door - Update UI - Generate graphical representation of locked door with slick
  + 29/09/2017 21:58 - US 12 - Select a locked door - Update UI - Observe slick object on change to update printed data
- + ~~29/09/2017 21:58 - US 1 - Register a new locked door - define how to store locked door~~
- + ~~29/09/2017 21:58 - US 1 - Register a new locked door - Install solution to store locked door~~
- + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - Adding HTML Button
- + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - Create modal window
- + 29/09/2017 21:58 - US 1 - Register a new locked door - Send Data from renderer process to Main process
- + 29/09/2017 21:58 - US 1 - Register a new locked door - store data in main process
+ + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - open modal window when click on add btn
+ + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - Create modal window when click on add btn
+
+
 
 # DONE
 _Here is the list of the already done users stories and tasks.
@@ -70,3 +67,6 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 28/09/2017 18:45 - 29/09/2017 21:07 - US 11 - Print password
  + 29/09/2017 21:47 - 29/09/2017 21:58 - US 1 - Register a new locked door - define how to store locked door
  + 29/09/2017 21:58 - 29/09/2017 22:08 - US 1 - Register a new locked door - Install solution to store locked door
+ + 29/09/2017 21:58 - 02/10/2017 22:08 - US 1 - Register a new locked door - update UI - Adding HTML Button
+ + 29/09/2017 21:58 - US 12 - Select a locked door - delete previous mockObject because I won't use it
+ + 29/09/2017 21:58 - 02/10/2017 22:08 - US 12 - Select a locked door - Update UI - Generate graphical representation of locked door with slick
