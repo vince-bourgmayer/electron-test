@@ -1,15 +1,20 @@
 # Resume of projet's progress
-
+## 02/10/2017
+I don't need to use DB in main process but in renderer process. So i commented previous code in main.js
+then I started to call nedb in script.js
 ## 31/09/2017
 I read:
 - some articles about testing with mocha
 	1. [a guide about mocha](http://samwize.com/2014/02/08/a-guide-to-mochas-describe-it-and-setup-hooks/)
-		_NB: describe() serve to group tests cases or other groups_
+		_NB:_ 
+		+ describe() serve to group tests cases or other groups
+		+ pending means "en attente" or 'en attendant'
 	2. [mocha's doc](https://mochajs.org/#arrow-functions)
 	3. [should.js](https://github.com/shouldjs/should.js)
 - [a guide about docco](http://ashkenas.com/docco/)
 
-1. I want to unit test access to DB.
+~~1. I want to test access to DB.~~
+I did test with mocha and expect.js in test/test.js
 
 ## 30/09/17
 I erased the branch to test SQLite3 and I lost everything I've done on it but I didn't expect to loose commit and trace of what I've done... No way, I just have to remberer that SQLite3 doesn't work with electron.js or it needs more steps with node-gyp to recompile source because SQLite doesn't have correct header to work with electron.js or something like that. So I'll use another db. I also learned a little more about 'in memory' db.

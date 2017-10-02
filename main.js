@@ -1,25 +1,15 @@
-const {app, BrowserWindow, ipcMain} = require('electron')
+// const {app, BrowserWindow, ipcMain} = require('electron')
+const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 const jsonify = require('jsonify')
-const Datastore = require('nedb')
+// const Datastore = require('nedb')
 
-const mockObject = {login:"toto", password:"titi"}
-let mockData = jsonify.stringify(mockObject)
+// const mockObject = {login:"toto", password:"titi"}
+// let mockData = jsonify.stringify(mockObject)
 let win
 //Open or create (if not exist) Database
-let db = new Datastore({filename: 'db/keychain.db', autoload: true});
-
-// function loadLockedDoor(){
-// 	let sql = "SELECT Name name, Url url, Login login, Password password FROM lockeddoor ORDER BY name"
-// 	db.all(sql,'',(err, rows ) => {
-// 	    if (err) {
-// 		    console.log(err.message)
-// 		    return null
-// 		}
-// 		return rows
-// 	});	
-// }
+// let db = new Datastore({filename: 'db/keychain.db', autoload: true});
 
 //function to create mainWindow
 function createMainWindow(){
@@ -35,7 +25,7 @@ function createMainWindow(){
 	win.setMenu(null)
 	//Load index.html
 	win.loadURL(url.format({
-		pathname: path.join(__dirname, 'UI/index.html'),
+		pathname: path.join(__dirname, 'index.html'),
 		protocol: 'file:',
 		slashes:true
 	}))
@@ -43,12 +33,12 @@ function createMainWindow(){
 	// let keychain = loadLockedDoor()
 
 	//send data to HTML
-	win.webContents.on('did-finish-load', () =>{
-		win.webContents.send('data', mockData)
-	})
+	// win.webContents.on('did-finish-load', () =>{
+	// 	win.webContents.send('data', mockData)
+	// })
 
 	//Show Chrome dev tools
-	// win.webContents.openDevTools()
+	win.webContents.openDevTools()
 
 	//free memory when windows is closed
 	win.on('closed', () => {
@@ -62,10 +52,10 @@ app.on('ready', createMainWindow)
 //What will happen if all windows are closed
 app.on('window-all-closed', () => {
 	if(process.platform !== 'darwin'){
-		db.close((err) => {
-  			if (err) {console.error(err.message)}
-	  		console.log('Close the database connection.')
-		});
+		// db.close((err) => {
+  // 			if (err) {console.error(err.message)}
+	 //  		console.log('Close the database connection.')
+		// });
 		app.quit()
 	}
 })
