@@ -19,11 +19,11 @@ _NB: I know that's ugly but work is still in progress!_
 ___screenshot of current result:___
 main window
 ---
-![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.dev.031017.png "main window")
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.dev.031017.JPG "main window")
 
 child window
 ---
-![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/doorCreationWindow.dev.031017.png "Door's creation window")
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/doorCreationWindow.dev.031017.JPG "Door's creation window")
 
 
 
