@@ -4,8 +4,9 @@ $(()=>{
     const Datastore = require('nedb')
     // const jsonify = require('jsonify')
     /**function **/
+
     function doorToHtml(door){
-        const addButtonHtml ="<div class='btn-in-carousel'><button class='btn-add-door'>New door...</button></div>"
+        const addButtonHtml ="<div class='btn-in-carousel'><button onclick='sendMsgCreateDoor()'class='btn-add-door'>New door...</button></div>"
         const removeButtonHtml="<div class='btn-in-carousel'><button class='btn-remove-btn' id='"+door.name+"'>delete</button></div>"
         return "<div class='door'>"+addButtonHtml+"<div><h3>"+door.name+"</h3></div>"+removeButtonHtml+"</div>"
     }
@@ -38,7 +39,6 @@ $(()=>{
             focusOnSelect: true
         })
     })
-
 
     //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
     $('#node-version').text("Node "+process.versions.node)

@@ -1,66 +1,69 @@
-// const {app, BrowserWindow, ipcMain} = require('electron')
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
+// const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 const jsonify = require('jsonify')
-// const Datastore = require('nedb')
 
-// const mockObject = {login:"toto", password:"titi"}
-// let mockData = jsonify.stringify(mockObject)
-let win
-//Open or create (if not exist) Database
-// let db = new Datastore({filename: 'db/keychain.db', autoload: true});
+let mainWindow
+let doorCreationWindow
 
 //function to create mainWindow
 function createMainWindow(){
-	win = new BrowserWindow({
+	mainWindow = new BrowserWindow({
 		width:662, 
-		height:271, 
+		height:350, 
 		resizable:false,
 		fullscreen:false,
 		fullscreenable :false,
 		title: "Password Keeper"
 	})
+	doorCreationWindow = new BrowserWindow({
+		parent:mainWindow,
+		width: 300,
+		height: 300,
+		fullscreen: false,
+		fullscreenable: false,
+		resizable:false,
+		show:false})
 	//Disable default menu
-	win.setMenu(null)
+	mainWindow.setMenu(null)
 	//Load index.html
-	win.loadURL(url.format({
+	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'index.html'),
 		protocol: 'file:',
 		slashes:true
 	}))
+	doorCreationWindow.loadURL(url.format({
+		pathname:path.join(__dirname, '/assets/html/doorCreation.html'),
+		protocol: 'file',
+		slashes: true
+	}))
 
-	// let keychain = loadLockedDoor()
-
-	//send data to HTML
-	// win.webContents.on('did-finish-load', () =>{
-	// 	win.webContents.send('data', mockData)
-	// })
+	ipcMain.on('asynchronous-message', (event, arg)=>{
+		if(arg == 'createDoor')
+			doorCreationWindow.show()
+	})
 
 	//Show Chrome dev tools
-	win.webContents.openDevTools()
+	// mainWindow.webContents.openDevTools()
 
 	//free memory when windows is closed
-	win.on('closed', () => {
-		win = null
+	mainWindow.on('closed', () => {
+		mainWindow = null
 	})
 }
-
 
 app.on('ready', createMainWindow)
 
 //What will happen if all windows are closed
 app.on('window-all-closed', () => {
 	if(process.platform !== 'darwin'){
-		// db.close((err) => {
-  // 			if (err) {console.error(err.message)}
-	 //  		console.log('Close the database connection.')
-		// });
 		app.quit()
 	}
 })
 
 app.on('activate', () => {
-	if(win === null)
+	if(mainWindow === null)
 		createMainWindow()
 })
+

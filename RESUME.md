@@ -1,4 +1,33 @@
 # Resume of projet's progress
+## 03/10/2017
+
+1. A second window is popping when clicking on a "new door" button in carousel. To allow that, I tried different things.
+	+ make buttons send msg to mainProcess
+		1. first in the script.js I used `$('.btn-add-door').click(function(){...})` but it doesn't worked
+		2. So I replace the .click event by a function declared at the begining of `script.js`and use HTML `onclick='myfunction()'` to make it work. It didn't work too but I got erro in dev tool. I caught something!
+		3. The function use ipcRenderer which is declared and called in index.html not in script.js so I decided to move my function in index.html and then it worked!
+	+ Create new window in main.js
+		1. First, I coded a second function like `createMainWindow()` where I created the child window and tried to make it pop when ipcMain catch asynchronous message send from index.html. But it didn't work.
+		2. Look on the web and I found that I have to create the child window in the same function as the main window.
+		3. Then it work not as expected because I  switched event and arg in use of `ipcMain.on(asynchronous-message, function(event, arg){...})` and now it works.
+	+ Create base of the interface of child window
+2. I justed notice that my sublim text3 isn't showing `.db`file
+3. Just discover that I can call child window only one time... Issue's trace told that object has been destroyed.
+
+_NB: I know that's ugly but work is still in progress!_
+
+___screenshot of current result:___
+main window
+---
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.dev.031017.png "main window")
+
+child window
+---
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/doorCreationWindow.dev.031017.png "Door's creation window")
+
+
+
+
 ## 02/10/2017
 I don't need to use DB in main process but in renderer process. So i commented previous code in main.js
 then I started to call nedb in script.js

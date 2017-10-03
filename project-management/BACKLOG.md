@@ -48,8 +48,7 @@ I will change users stories(US) when first are over. This part is a kind of deli
 _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
- + 29/09/2017 21:58 - US 12 - Select a locked door - Update UI - Observe slick object on change to update printed data
- + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - open modal window when click on add btn
+
  + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - get data from modal window
  + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - save door in db
  + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - update carousel
@@ -71,6 +70,7 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 29/09/2017 21:47 - 29/09/2017 21:58 - US 1 - Register a new locked door - define how to store locked door
  + 29/09/2017 21:58 - 29/09/2017 22:08 - US 1 - Register a new locked door - Install solution to store locked door
  + 29/09/2017 21:58 - 30/09/2017 ??:?? - US 12 - Select a locked door - delete previous mockObject because I won't use it
- + 29/09/2017 21:58 - 02/10/2017 22:08 - US 1 - Register a new locked door - update UI - Adding HTML Button
- + 29/09/2017 21:58 - 02/10/2017 22:08 - US 12 - Select a locked door - Update UI - Generate graphical representation of locked door with slick
-
+ + 29/09/2017 21:58 - 02/10/2017 18:33 - US 1 - Register a new locked door - update UI - Adding HTML Button
+ + 29/09/2017 21:58 - 02/10/2017 18:33 - US 12 - Select a locked door - Update UI - Generate graphical representation of locked door with slick
+ + 29/09/2017 21:58 - 02/10/2017 18:33 - US 12 - Select a locked door - Update UI - Observe slick object on change to update printed data
+ + 29/09/2017 21:58 - 03/10/2017 17:47 - US 1 - Register a new locked door - update UI - open modal window when click on add btn

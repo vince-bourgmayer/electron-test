@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Password Keeper</title>
-    <!-- <link rel="stylesheet" href="css/jquery.flipster.min.css"> -->
     <link rel="stylesheet" type="text/css" href="assets/css/slick.scss">
     <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.scss">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -13,15 +12,7 @@
 </style>
 <body style="max-width: 100%; background-color: lightgray">
     <div id="lockedDoors" style="width:95%;display:block">
-<!--         <div class="door">1</div>
-        <div class="door">2</div>
-        <div class="door">3</div>
-        <div class="door">4</div>
-        <div class="door">5</div>
-        <div class="door">6</div>
-        <div class="door">7</div>
-        <div class="door">8</div>
-        <div class="door">9</div> -->
+
     </div>
     <div id="zone-center">
         <div id="zone-text"><p>Locked Door name: </p>
@@ -44,6 +35,9 @@
         //Load Jquery
         window.$ =window.jQuery = require('jquery')
         const {ipcRenderer} = require('electron')
+        function sendMsgCreateDoor(){
+            ipcRenderer.send('asynchronous-message', 'createDoor')
+        }
     </script>
     <script src="assets/js/script.js"></script>
 </footer>
