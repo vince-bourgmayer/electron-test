@@ -2,11 +2,22 @@
 $(()=>{
 	require('slick-carousel')
     const Datastore = require('nedb')
-    // const jsonify = require('jsonify')
     /**function **/
+    //Add a locked door (save new door in db and if everything ok, then add it to slick)
+    function addDoor(){
+        door ={name:'',
+            url:'',
+            login:'',
+            password:''
+        }
+        db.insert(door, function(err, newDoor){
+            if(!err)
+                $('#lockedDoors').slick('slickAdd', doorToHtml(door))
+        })
+    }
 
     function doorToHtml(door){
-        const addButtonHtml ="<div class='btn-in-carousel'><button onclick='sendMsgCreateDoor()'class='btn-add-door'>New door...</button></div>"
+        const addButtonHtml ="<div class='btn-in-carousel'><button onclick='printCreateDoorForm()'class='btn-add-door'>New door...</button></div>"
         const removeButtonHtml="<div class='btn-in-carousel'><button class='btn-remove-btn' id='"+door.name+"'>delete</button></div>"
         return "<div class='door'>"+addButtonHtml+"<div><h3>"+door.name+"</h3></div>"+removeButtonHtml+"</div>"
     }

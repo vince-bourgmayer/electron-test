@@ -1,4 +1,19 @@
 # Resume of projet's progress
+## 07/10/2017
+I passed my day to look for a way to get Data from child window to main window without passing by IPC.
+I thought I've found a solution with `window.open()`called from renderer Process and with `window.opener` but all my trials failed.
+Every link found on google is saying that it isn't possible as I would, so I decided to rethink the apps with child window. I'll do everything in the single main window.
+The main window will stay globally the same but the central part will see its content change depending on what the user want to do.
+If user want to add a new door, I will print a formular, if user wants to see password, then app will show data on that door (and so user will get its password or login)
+
+I can't use `<webview>` because webview launch a new process which is independant from main window.
+To hide or show the html element of the page I can use display or visibility css attribute. But I threw an eye on the difference between them and visibility let the element able to affect the page. So I'll use `display`.
+
+## 05/10/2017
+1. Update todo list to add the task of correcting the issue with child window
+
+2. Start to think on how to get info from child window to main window. Then I start to search on google info about this and I fell on [this](https://discuss.atom.io/t/object-has-been-destroyed-when-open-secondary-child-window/30880/4). So, as it has been said there, I add a listener on the child window for the close event. When this one is trigger, it will hide the child window. I'm not sur but I think that `event.preventDefault()` replace standard behaviour when closing by this one. I check if I still got the issue and the answer is No. Problem resolved :) 
+
 ## 03/10/2017
 
 1. A second window is popping when clicking on a "new door" button in carousel. To allow that, I tried different things.
@@ -24,8 +39,6 @@ main window
 child window
 ---
 ![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/doorCreationWindow.dev.031017.JPG "Door's creation window")
-
-
 
 
 ## 02/10/2017

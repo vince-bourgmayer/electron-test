@@ -12,17 +12,37 @@
 </style>
 <body style="max-width: 100%; background-color: lightgray">
     <div id="lockedDoors" style="width:95%;display:block">
-
     </div>
     <div id="zone-center">
-        <div id="zone-text"><p>Locked Door name: </p>
-        <p>Login: <span id="login"></span></p>
-        <p>Password: <span id="password"></span></p>
+        <div id="show-data">
+            <div id="zone-text"><p>Locked Door name: </p>
+            <p>Login: <span id="login"></span></p>
+            <p>Password: <span id="password"></span></p>
+            </div>
+            <div id="zone-button">
+                <button onclick="alert('click Login!')">Copy login to clipboard</button>
+                <button onclick="alert('Click pwd!')">Copy password to clipboard</button>
+                <button >Update information</button>
+            </div>
         </div>
-        <div id="zone-button">
-            <button onclick="alert('click Login!')">Copy login to clipboard</button>
-            <button onclick="alert('Click pwd!')">Copy password to clipboard</button>
-            <button >Update information</button>
+        <div id="addDoor" style="display:none">
+            <div>
+                <label for="doorName">Nom: </label>
+                <input type="text" id="doorName" name="doorName">
+            </div>
+            <div>
+                <label for="doorURL">Url: </label>
+                <input type="text" id="doorURL" name="doorURL">            
+            </div>
+            <div>
+                <label for="doorLogin">Login: </label>
+                <input type="text" id="doorLogin" name="doorLogin">            
+            </div>
+            <div>
+                <label for="doorPassword">Mot de passe: </label>
+                <input type="password" id="doorPassword" name="doorPassword">            
+            </div>
+            <button onclick="addDoor()">Submit</button>
         </div>
     </div>
 </body>
@@ -35,8 +55,19 @@
         //Load Jquery
         window.$ =window.jQuery = require('jquery')
         const {ipcRenderer} = require('electron')
-        function sendMsgCreateDoor(){
-            ipcRenderer.send('asynchronous-message', 'createDoor')
+
+        function reverseCSSDisplay(element){
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+        function printCreateDoorForm(){
+            let form = document.getElementById('addDoor')
+            let dataPanel = document.getElementById('show-data')
+            reverseCSSDisplay(form)
+            reverseCSSDisplay(dataPanel)
         }
     </script>
     <script src="assets/js/script.js"></script>

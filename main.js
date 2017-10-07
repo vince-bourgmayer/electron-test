@@ -17,40 +17,46 @@ function createMainWindow(){
 		fullscreenable :false,
 		title: "Password Keeper"
 	})
-	doorCreationWindow = new BrowserWindow({
-		parent:mainWindow,
-		width: 300,
-		height: 300,
-		fullscreen: false,
-		fullscreenable: false,
-		resizable:false,
-		show:false})
+
 	//Disable default menu
 	mainWindow.setMenu(null)
+
 	//Load index.html
 	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'index.html'),
 		protocol: 'file:',
 		slashes:true
 	}))
-	doorCreationWindow.loadURL(url.format({
-		pathname:path.join(__dirname, '/assets/html/doorCreation.html'),
-		protocol: 'file',
-		slashes: true
-	}))
 
-	ipcMain.on('asynchronous-message', (event, arg)=>{
-		if(arg == 'createDoor')
-			doorCreationWindow.show()
+	mainWindow.webContents.on('new-window', (event, urllink, frameName) => {
+		if(frameName === 'doorCreation'){
+			event.preventDefault()
+			const childWindow = new BrowserWindow({
+			parent:mainWindow,
+			width: 300,
+			height: 300,
+			fullscreen: false,
+			fullscreenable: false,
+			resizable:false,
+			show:false})
+			childWindow.setMenu(null)
+			childWindow.once('ready-to-show', () => childWindow.show())
+			childWindow.loadURL(url.format({
+				pathname:path.join(__dirname, '/assets/html/doorCreation.html'),
+				protocol: 'file',
+				slashes: true
+			}))
+			event.newGuest = childWindow
+		}
 	})
-
 	//Show Chrome dev tools
-	// mainWindow.webContents.openDevTools()
+	mainWindow.webContents.openDevTools()
 
 	//free memory when windows is closed
 	mainWindow.on('closed', () => {
 		mainWindow = null
 	})
+
 }
 
 app.on('ready', createMainWindow)

@@ -23,8 +23,17 @@
             <label for="doorPassword">Mot de passe: </label>
             <input type="password" id="doorPassword" name="doorPassword">            
         </div>
-        <button>Submit</button>
+        <button onclick="sendForm()">Submit</button>
     </div>
+    <footer>
+        <script>
+            function sendForm(){
+                // window.opener.document.getElementById('login').insertAdjacentHTML('afterend','<h1>VICTOIRE</h1>')
+                alert('HEYHOOO')
+                window.opener.postMessage('toto','*')
+            }
+        </script>
+    </footer>
 </body>
 </html>
 

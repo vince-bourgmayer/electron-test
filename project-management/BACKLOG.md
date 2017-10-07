@@ -15,6 +15,7 @@
 | 10 | User | ~~see my login~~                   | to remember it             | 1 | 1 |
 | 11 | User | ~~see my password~~                | to remember it             | 1 | 1 |
 | 12 | User | select a locked door               | to get login and password  | 2 | 1 |
+| 13 | User | generate a password                | I won't have to invent one | 5 | 4 |
 
 
 
@@ -49,13 +50,14 @@ _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
 
- + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - get data from modal window
- + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - save door in db
+
+ + 29/09/2017 21:58 - US 1 - Register a new locked door - saving data - save door in db
  + 29/09/2017 21:58 - US 1 - Register a new locked door - update UI - update carousel
+ 
 
 
 
-# DONE
+# Done
 _Here is the list of the already done users stories and tasks.
 Description will be: Start date, End date, story's identifier, task (optionnal), subtask(optionnal)_
 
@@ -74,3 +76,9 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 29/09/2017 21:58 - 02/10/2017 18:33 - US 12 - Select a locked door - Update UI - Generate graphical representation of locked door with slick
  + 29/09/2017 21:58 - 02/10/2017 18:33 - US 12 - Select a locked door - Update UI - Observe slick object on change to update printed data
  + 29/09/2017 21:58 - 03/10/2017 17:47 - US 1 - Register a new locked door - update UI - open modal window when click on add btn
+ + 05/10/2017 15:51 - 05/10/2017 16:04 - US 1 - Register a new locked door - update UI - correct issue with modal window which only open 1 time
+ + 07/10/2017 17:21 - 07/10/2017 17:54 - US 1 - Register a new locked door - update UI - Make UI depends on the user action
+
+ 
+# Forgiven
+ + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window
