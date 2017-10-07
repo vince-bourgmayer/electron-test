@@ -9,6 +9,10 @@ If user want to add a new door, I will print a formular, if user wants to see pa
 I can't use `<webview>` because webview launch a new process which is independant from main window.
 To hide or show the html element of the page I can use display or visibility css attribute. But I threw an eye on the difference between them and visibility let the element able to affect the page. So I'll use `display`.
 
+I update index.html to add function to hide and show data or form. I create a function to add a new door but I won't work. Devtools tells that `addDoor()` in script.js isn't a function. I wonder if it's because of display: none...
+
+I will have to put "new door" button out of carousel element, because if there is no door, user won't be able to add a new one.
+
 ## 05/10/2017
 1. Update todo list to add the task of correcting the issue with child window
 

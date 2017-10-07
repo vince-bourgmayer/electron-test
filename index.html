@@ -14,6 +14,7 @@
     <div id="lockedDoors" style="width:95%;display:block">
     </div>
     <div id="zone-center">
+        <div class='btn-in-carousel'><button onclick="printCreateDoorForm()" class="btn-add-door">New door...</button></div>
         <div id="show-data">
             <div id="zone-text"><p>Locked Door name: </p>
             <p>Login: <span id="login"></span></p>
@@ -25,7 +26,7 @@
                 <button >Update information</button>
             </div>
         </div>
-        <div id="addDoor" style="display:none">
+        <div id="addDoor">
             <div>
                 <label for="doorName">Nom: </label>
                 <input type="text" id="doorName" name="doorName">
@@ -42,7 +43,7 @@
                 <label for="doorPassword">Mot de passe: </label>
                 <input type="password" id="doorPassword" name="doorPassword">            
             </div>
-            <button onclick="addDoor()">Submit</button>
+            <button id="addDoorBtn">Submit</button>
         </div>
     </div>
 </body>
@@ -55,7 +56,7 @@
         //Load Jquery
         window.$ =window.jQuery = require('jquery')
         const {ipcRenderer} = require('electron')
-
+        const path = require('path')
         function reverseCSSDisplay(element){
             if (element.style.display === "none") {
                 element.style.display = "block";
@@ -69,7 +70,9 @@
             reverseCSSDisplay(form)
             reverseCSSDisplay(dataPanel)
         }
+        reverseCSSDisplay(document.getElementById('addDoor'))
+        require(path.resolve('assets/js/script.js'))
     </script>
-    <script src="assets/js/script.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
 </footer>
 </html>
