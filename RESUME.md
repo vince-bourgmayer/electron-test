@@ -3,6 +3,10 @@
 ## 08/10/2017
 I work a little this morning to find why I can't add a new door... Debugging code help me to don't be too far from solution.
 
+This evening. I corrected function  `saveDoor(door, db)` in script.js which contains the error. In this function the app realizes a `db.insert(object, function())`. I have added the `return`instruction in the callback function but not in my function `saveDoor` so no Data where returned. I correct this and now it's work!
+
+I add function to handle change in carousel. It get data from db and add them in view. But the problem come from door that have been added during the current session and that aren't in the doc collection. So, I should define a variable which contains docs. Something like a hashset by example. Then listen `afeterchange` out of part of code where I initialize slick.
+
 ## 07/10/2017
 I passed my day to look for a way to get Data from child window to main window without passing by IPC.
 I thought I've found a solution with `window.open()`called from renderer Process and with `window.opener` but all my trials failed.
