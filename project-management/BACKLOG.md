@@ -14,7 +14,7 @@
 |  9 | User | delete a locked door               | to keep only what's needed | 4 | 1 |
 | 10 | User | ~~see my login~~                   | to remember it             | 1 | 1 |
 | 11 | User | ~~see my password~~                | to remember it             | 1 | 1 |
-| 12 | User | select a locked door               | to get login and password  | 2 | 1 |
+| 12 | User | ~~select a locked door~~           | to get login and password  | 2 | 1 |
 | 13 | User | generate a password                | I won't have to invent one | 5 | 4 |
 
 
@@ -49,10 +49,6 @@ I will change users stories(US) when first are over. This part is a kind of deli
 _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
-  + 08/10/2017 2332 - US 12 - Select a locked door - Update UI - Update data when slide change
-
-
- 
 
 
 
@@ -79,7 +75,10 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 07/10/2017 17:21 - 07/10/2017 17:54 - US 1 - Register a new locked door - update UI - Make UI depends on the user action
  + 29/09/2017 21:58 - 08/10/2017 22:45 - US 1 - Register a new locked door - saving data - save door in db
  + 29/09/2017 21:58 - 08/10/2017 22:45 - US 1 - Register a new locked door - update UI - update carousel
- + 08/10/2017 22:46 - 08/10/2017 23:13  - US 1 - Register a new locked door - issue. If lockedDoor list is empty at the window start, adding new door doesn't refresh carousel
+ + 08/10/2017 22:46 - 08/10/2017 23:13 - US 1 - Register a new locked door - issue. If lockedDoor list is empty at the window start, adding new door doesn't refresh carousel
+ + 08/10/2017 23:32 - 08/10/2017 23:54 - US 12 - Select a locked door - Update UI - Update data when slide change
+
+
 
 # Forgiven
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window

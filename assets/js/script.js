@@ -2,6 +2,7 @@
 $(()=>{
 	require('slick-carousel')
     const Datastore = require('nedb')
+    let lockedDoors
     /**function **/
     //Add a locked door (save new door in db and if everything ok, then add it to slick)
     //This function isn't pure...
@@ -32,6 +33,7 @@ $(()=>{
         db.insert(door, function(err, doc){
             if(err)
                 console.log(err)
+            lockedDoors.push(doc)
         })
         if(door){
             $('#lockedDoors').slick('slickAdd', doorToHtml(door))
@@ -53,22 +55,16 @@ $(()=>{
     //         console.log(err.message)
     // })
     db.find({}, function(err,docs){
-        let slideIndex = 0
         for(doc of docs){
             $('#lockedDoors').append(doorToHtml(doc))
         }
+        lockedDoors = docs
         $('#lockedDoors').slick({
             centerMode:true,
             slidesToShow:5,
             focusOnSelect: true
         })
-       $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){
-            obj = docs[currentSlide]
-            $('#name').text(obj.name)
-            $('#url').text(obj.url)
-            $('#login').text(obj.login)
-            $('#password').text(obj.password)
-        })
+
     })
 
     //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
@@ -77,5 +73,11 @@ $(()=>{
     $("#addDoorBtn").on('click', ()=>{
         const res = addDoor(db)
     })
-
+   $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){
+        obj = lockedDoors[currentSlide]
+        $('#name').text(obj.name)
+        $('#url').text(obj.url)
+        $('#login').text(obj.login)
+        $('#password').text(obj.password)
+    })
 })
