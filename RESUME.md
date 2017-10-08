@@ -1,4 +1,8 @@
 # Resume of projet's progress
+
+## 08/10/2017
+I work a little this morning to find why I can't add a new door... Debugging code help me to don't be too far from solution.
+
 ## 07/10/2017
 I passed my day to look for a way to get Data from child window to main window without passing by IPC.
 I thought I've found a solution with `window.open()`called from renderer Process and with `window.opener` but all my trials failed.
