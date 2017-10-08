@@ -33,7 +33,8 @@ $(()=>{
         db.insert(door, function(err, doc){
             if(err)
                 console.log(err)
-            lockedDoors.push(doc)
+            else
+                lockedDoors.push(doc)
         })
         if(door){
             $('#lockedDoors').slick('slickAdd', doorToHtml(door))
@@ -50,10 +51,10 @@ $(()=>{
         }
     })
     //@To remove when over
-    // db.remove({},{multi:true}, function(err, numRemoved){
-    //     if(err)
-    //         console.log(err.message)
-    // })
+    db.remove({},{multi:true}, function(err, numRemoved){
+        if(err)
+            console.log(err.message)
+    })
     db.find({}, function(err,docs){
         for(doc of docs){
             $('#lockedDoors').append(doorToHtml(doc))

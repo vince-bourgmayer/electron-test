@@ -3,7 +3,7 @@
 
 | N° |  As  |        I Want to                   | so that                    | P | D |
 |:---|------|:----------------------------------:|:--------------------------:|---|---|
-|  1 | User | register new locked door           | I can order my password    | 2 | 2 |
+|  1 | User | ~~register new locked door~~       | I can order my password    | 2 | 2 |
 |  2 | User | register new password              | I can refind them easily   | 1 | 2 |
 |  3 | User | register new login                 | I can refind them easily   | 1 | 2 |
 |  4 | User | protect password from other people | I can sleep on my two ears | 4 | 4 |
@@ -35,7 +35,7 @@ To be effective and don't spread my time again and again I will pick up users st
 I will change users stories(US) when first are over. This part is a kind of delivery's plan._
 
  1. ~~Users stories : 10 and 11~~
- 2. Users stories : 12 and 1
+ 2. ~~Users stories : 12 and 1~~
  3. Users stories : 2 and 3
  4. Users stories : 5 and 6
  5. Users stories : 4 and 7

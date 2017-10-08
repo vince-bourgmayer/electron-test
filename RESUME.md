@@ -7,6 +7,8 @@ This evening. I corrected function  `saveDoor(door, db)` in script.js which cont
 
 I add function to handle change in carousel. It get data from db and add them in view. But the problem come from door that have been added during the current session and that aren't in the doc collection. So, I should define a variable which contains docs. Something like a hashset by example. Then listen `afeterchange` out of part of code where I initialize slick.
 
+Now I can add new locked door, and print data when selecting a door!
+
 ## 07/10/2017
 I passed my day to look for a way to get Data from child window to main window without passing by IPC.
 I thought I've found a solution with `window.open()`called from renderer Process and with `window.opener` but all my trials failed.
