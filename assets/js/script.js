@@ -4,22 +4,11 @@ $(()=>{
     const Datastore = require('nedb')
     let lockedDoors
     /**function **/
-    //Add a locked door (save new door in db and if everything ok, then add it to slick)
-    //This function isn't pure...
-    function getDataOfNewDoor(){
-        // console.log('getDataOfNewDoor')
-        const doorName= $('#doorName').val()
-        const doorUrl= $('#doorURL').val()
-        const doorLogin= $('#doorLogin').val()
-        const doorPassword= $('#doorPassword').val()
-        return {
-            name: doorName,
-            url: doorUrl,
-            login: doorLogin,
-            password: doorPassword
-        }
-    }
 
+    function addPropertyandValToObject(attr, val, objet={}){
+        // return {attr: value} => Doesn't work
+        return Object.defineProperty(objet, attr, {value: val, enumerable:true})
+    }
     //This function is pure.
     //Function to create the carousel element of a door
     function doorToHtml(door){
@@ -27,20 +16,8 @@ $(()=>{
         return "<div class='door'><div><h3>"+door.name+"</h3></div>"+removeButtonHtml+"</div>"
     }
 
-    //Function to add a new door (not pure)
-    function addDoor(db){
-        const door = getDataOfNewDoor()
-        db.insert(door, function(err, doc){
-            if(err)
-                console.log(err)
-            else
-                lockedDoors.push(doc)
-        })
-        if(door){
-            $('#lockedDoors').slick('slickAdd', doorToHtml(door))
-            return 1
-        } 
-        return null   
+    function addEltToList(elt, list){
+        return list.push(elt)
     }
 
     //Load Data
@@ -68,11 +45,29 @@ $(()=>{
 
     })
 
+    function makeObjectFromUI(array){
+        let object = {}
+        for(elt of array){
+            addPropertyandValToObject(elt.name, elt.value, object)
+        }
+        return object
+    }
+
+
     //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
     $('#node-version').text("Node "+process.versions.node)
     //It seems that it setting parameters in slick lock buttons 
     $("#addDoorBtn").on('click', ()=>{
-        const res = addDoor(db)
+        let door = makeObjectFromUI($('.new-door-field'))
+        db.insert(door, function(err, doc){
+            if(err)
+                console.log(err)
+            else
+                addEltToList(doc, lockedDoors)
+        })
+        if(door){
+            $('#lockedDoors').slick('slickAdd', doorToHtml(door))
+        } 
     })
    $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){
         obj = lockedDoors[currentSlide]

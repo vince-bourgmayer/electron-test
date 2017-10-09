@@ -6,9 +6,8 @@ let db = new Datastore({filename: 'db/keychain-test.db', autoload: true});
 
 
 function doorToHtml(door){
-	const addButtonHtml ="<div class='btn-in-carousel'><button class='btn-add-door'>New door...</button></div>"
 	const removeButtonHtml="<div class='btn-in-carousel'><button class='btn-remove-btn' id='"+door.name+"'>delete</button></div>"
-	return "<div class='door'>"+addButtonHtml+"<div><h3>"+door.name+"</h3></div>"+removeButtonHtml+"</div>"
+	return "<div class='door'><div><h3>"+door.name+"</h3></div>"+removeButtonHtml+"</div>"
 }
 
 let result

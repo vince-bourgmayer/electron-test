@@ -1,4 +1,8 @@
 # Resume of projet's progress
+## 09/10/2017
+Just to see it is working as expected I installed nodejs on my old computer with linux mint OS. I installed `curl` then `nodejs` and `npm`, then I git clone the repo in new directory and finally run `npm install`. I launch start command and see my app working as expected on linux, exactly as in windows. I finally installed `vim` to take a look at `package.json`
+
+I need to make my code better now. But after that I'll start users stories 5 and 6 which concern clipboard. luckily electron doc, already talk about [clipboard](https://electron.atom.io/docs/api/clipboard/)
 
 ## 08/10/2017
 I work a little this morning to find why I can't add a new door... Debugging code help me to don't be too far from solution.
@@ -7,7 +11,9 @@ This evening. I corrected function  `saveDoor(door, db)` in script.js which cont
 
 I add function to handle change in carousel. It get data from db and add them in view. But the problem come from door that have been added during the current session and that aren't in the doc collection. So, I should define a variable which contains docs. Something like a hashset by example. Then listen `afeterchange` out of part of code where I initialize slick.
 
-Now I can add new locked door, and print data when selecting a door!
+Now I can add new locked door, and print data when selecting a door! I juste realized that I've done User stories 2 and 3 during realisation of user stories 1... cool!
+
+I think I will need to clean my code soon, because my function aren't really pure. Moreover, the use of global `lockedDoors` variable doesn't make me proud. I want to find a more pure way to do it, so that I will respect functionnal programming concept. In the same way, I have to decide what to do about `getDataOfNewDoor()` which isn't pure.
 
 ## 07/10/2017
 I passed my day to look for a way to get Data from child window to main window without passing by IPC.
