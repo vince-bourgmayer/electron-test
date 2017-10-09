@@ -1,8 +1,13 @@
 # Resume of projet's progress
+## 10/10/2017
+To implement constraint on door's name I think I will use `Array.prototype.find()` to verify if a door with this name already exist
+
 ## 09/10/2017
 Just to see it is working as expected I installed nodejs on my old computer with linux mint OS. I installed `curl` then `nodejs` and `npm`, then I git clone the repo in new directory and finally run `npm install`. I launch start command and see my app working as expected on linux, exactly as in windows. I finally installed `vim` to take a look at `package.json`
 
 I need to make my code better now. But after that I'll start users stories 5 and 6 which concern clipboard. luckily electron doc, already talk about [clipboard](https://electron.atom.io/docs/api/clipboard/)
+
+I continued to improve my code and thanks to mocha and unit testing I code correctly. I use ES6 `Function.prototype.apply()`to make pure function. I was a little hard to understand but this is a little because i'm tired.
 
 ## 08/10/2017
 I work a little this morning to find why I can't add a new door... Debugging code help me to don't be too far from solution.
