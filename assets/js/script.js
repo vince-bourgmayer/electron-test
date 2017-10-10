@@ -7,8 +7,7 @@ $(()=>{
     //Function to create the carousel element of a door
     function doorToHtml(door){
         //This function is pure.
-        const removeButtonHtml="<div class='btn-in-carousel'><button class='btn-remove-btn' id='"+door.name+"'>delete</button></div>"
-        return "<div class='door'><div><h3>"+door.name+"</h3></div>"+removeButtonHtml+"</div>"
+        return "<div class='door'><div><h3>"+door.name+"</h3></div></div>"
     }
     //Attach a property to an object
     function setProperty(source, objet){
@@ -88,8 +87,8 @@ $(()=>{
     $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){
         obj = lockedDoors[currentSlide]
         $('#name').text(obj.name)
-        $('#url').text(obj.url)
-        $('#login').text(obj.login)
-        $('#password').text(obj.password)
+        $('#url').val(obj.url)
+        $('#login').val(obj.login)
+        $('#password').val(obj.password)
     })
 })

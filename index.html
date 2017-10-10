@@ -3,50 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <title>Password Keeper</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="node_modules/select2/dist/css/select2.min.css"> -->
     <link rel="stylesheet" type="text/css" href="assets/css/slick.scss">
     <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.scss">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-<style>
-
-</style>
-<body style="max-width: 100%; background-color: lightgray">
-    <div id="lockedDoors" style="width:95%;display:block">
-    </div>
-    <div id="zone-center">
-        <div class='btn-in-carousel'><button onclick="printCreateDoorForm()" class="btn-add-door">New door...</button></div>
-        <div id="show-data">
-            <div id="zone-text"><p>Locked Door name: <span id="name"></span></p>
-            <p>URL: <span id="url"></span></p>
-            <p>Login: <span id="login"></span></p>
-            <p>Password: <span id="password"></span></p>
-            </div>
-            <div id="zone-button">
-                <button onclick="sendToClipboard('login')">Copy login to clipboard</button>
-                <button onclick="sendToClipboard('password')">Copy password to clipboard</button>
-                <button >Update information</button>
+<body style="max-width: 100%; background-color: lightgray" class="container-fluid">
+    <!-- Row to create a new door or to filter -->
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="input-group">
+                <input type="text" placeholder="Name..." aria-label="Name..." class="form-control"/>
+                 <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button" onclick="printCreateDoorForm()">Create</button>
+                </span>
             </div>
         </div>
-        <div id="addDoor">
-            <form>
-                <div>
-                    <label for="name">Nom: </label>
-                    <input type="text" id="doorName" name="name" class="new-door-field">
+        <div class="col-xs-8">
+            <div class="col-xs-5">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">name?</span>
+                    <input type="search" placeholder="filter on name" class="form-control"/>
                 </div>
-                <div>
-                    <label for="url">Url: </label>
-                    <input type="text" id="doorURL" name="url" class="new-door-field">            
+            </div>
+            <div class="col-xs-5">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">tags?</span>
+                    <input type="text" placeholder="filter on category" class="form-control" name="categories[]"/>
                 </div>
-                <div>
-                    <label for="login">Login: </label>
-                    <input type="text" id="doorLogin" name="login" class="new-door-field">            
+            </div>
+            <div class="col-xs-2">
+                <button>Filter</button>
+            </div>
+        </div>
+    </div>
+    <!-- Row to select door -->
+    <div class="row" id='carousel'>
+        <div class="col-xs-12">
+            <div id="lockedDoors" >
+            </div>
+        </div>
+    </div>
+    <!-- Row to print data or to update data -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="zone-center">
+                <div id="show-data">
+                    <div id="zone-text">
+                         <div class="row text-cente">
+                            <h1><span id="name"></span></h1>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <span class="input-group-addon">URL</span>
+                                <input type="text" class="form-control" placeholder="add a URL" id="url">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Open in default browser</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <span class="input-group-addon">Login</span>
+                                <input type="text" class="form-control" placeholder="add a login" id="login">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button" onclick="sendToClipboard('login')">copy to clipboard</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <span class="input-group-addon">Password</span>
+                                <input type="text" class="form-control" placeholder="add a password" id="password">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button" onclick="sendToClipboard('password')">copy to clipboard</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="zone-button" class="row">
+                        <button type="button" class="btn btn-secondary">Update information</button>
+                        <button type="button" class="btn btn-secondary">Delete information</button>
+                    </div>
                 </div>
-                <div>
-                    <label for="password">Mot de passe: </label>
-                    <input type="password" id="doorPassword" name="password" class="new-door-field">            
+                <div id="addDoor">
+                    <form>
+                        <div>
+                            <label for="name">Nom: </label>
+                            <input type="text" id="doorName" name="name" class="new-door-field">
+                        </div>
+                        <div>
+                            <label for="url">Url: </label>
+                            <input type="text" id="doorURL" name="url" class="new-door-field">            
+                        </div>
+                        <div>
+                            <label for="login">Login: </label>
+                            <input type="text" id="doorLogin" name="login" class="new-door-field">            
+                        </div>
+                        <div>
+                            <label for="password">Mot de passe: </label>
+                            <input type="password" id="doorPassword" name="password" class="new-door-field">            
+                        </div>
+                        <button type='button' id="addDoorBtn">Submit</button>
+                    </form>
                 </div>
-                <button type='button' id="addDoorBtn">Submit</button>
-            </form>
+            </div>       
         </div>
     </div>
 </body>
@@ -83,6 +145,7 @@
         reverseCSSDisplay(document.getElementById('addDoor'))
         require(path.resolve('assets/js/script.js'))
     </script>
-    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="./node_modules/select2/dist/js/select2.full.min.js"></script> -->
 </footer>
 </html>

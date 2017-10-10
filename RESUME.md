@@ -18,6 +18,13 @@ I use electron's doc to look how to send data to clipboard. Then I create a func
 #### 4. Copy login to clipboard
 ![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.login.to.clipboard.dev.101017.JPG "login is in the clipboard")
 
+I'm a little happy of what I've done yet. But I know that I can do more...
+I looked for bootstrap and install it: `npm install bootstrap --save`. But I should completely rethink design. Then, I made paper drawn schema. I began to write clean html and I thought that I should change behaviour of application, specially when user want to create a new element. In this case, a simple input to get name is usefull, then it add the element with just a name. The central interface could be a permanent form and user can always update infos which would be print in `input` by clicking on a "update" button, or remove the element on clicking on "delete button"
+
+I know I shouldn't anticipate but I also installed select2 and bootstrap theme for select 2. Because I think that later I will implement tag management to be able to filter door. but for later
+
+Ps: I know there is a moskito ready to pull out my blood here...I ear his "bzzzzzz". Let's share some blood tonight!
+
 
 ## 09/10/2017
 Just to see it is working as expected I installed nodejs on my old computer with linux mint OS. I installed `curl` then `nodejs` and `npm`, then I git clone the repo in new directory and finally run `npm install`. I launch start command and see my app working as expected on linux, exactly as in windows. I finally installed `vim` to take a look at `package.json`
