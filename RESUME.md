@@ -3,7 +3,9 @@
 To implement constraint on door's name I think I will use `Array.prototype.find()` to verify if a door with this name already exist
 
 I use electron's doc to look how to send data to clipboard. Then I create a function `sendToClipboard(identifier)` which get text of element with identifier as html id and then get text to put in clipboard via `clipboard.writeText(...)`. I tested and it works. SO EASY! In 30 min I realised users stories 5 and 6. Next are 4 and 7. They will be a little harder I think.
+
 ---
+
 #### 1. Start the app
 ![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.nodoor.dev.101017.JPG "main window")
 
@@ -25,6 +27,7 @@ I need to make my code better now. But after that I'll start users stories 5 and
 I continued to improve my code and thanks to mocha and unit testing I code correctly. I use ES6 `Function.prototype.apply()`to make pure function. I was a little hard to understand but this is a little because i'm tired.
 It seems that `find` or `findIndex`doesn't accept object as parameter.
 So I tried `indexOf`but it always return 1... Useless in fact!
+
 ## 08/10/2017
 I work a little this morning to find why I can't add a new door... Debugging code help me to don't be too far from solution.
 
