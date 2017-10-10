@@ -22,8 +22,8 @@
             <p>Password: <span id="password"></span></p>
             </div>
             <div id="zone-button">
-                <button onclick="alert('click Login!')">Copy login to clipboard</button>
-                <button onclick="alert('Click pwd!')">Copy password to clipboard</button>
+                <button onclick="sendToClipboard('login')">Copy login to clipboard</button>
+                <button onclick="sendToClipboard('password')">Copy password to clipboard</button>
                 <button >Update information</button>
             </div>
         </div>
@@ -58,7 +58,7 @@
     <script>
         //Load Jquery
         window.$ =window.jQuery = require('jquery')
-        const {ipcRenderer} = require('electron')
+        const {ipcRenderer, clipboard} = require('electron')
         const path = require('path')
         function reverseCSSDisplay(element){
             if (element.style.display === "none") {
@@ -72,6 +72,11 @@
             let dataPanel = document.getElementById('show-data')
             reverseCSSDisplay(form)
             reverseCSSDisplay(dataPanel)
+        }
+        function sendToClipboard(identifier){
+            const text = document.getElementById(identifier).textContent
+            clipboard.writeText(text)
+            alert("L'élément est dans le presse papier")
         }
         reverseCSSDisplay(document.getElementById('addDoor'))
         require(path.resolve('assets/js/script.js'))
