@@ -38,10 +38,10 @@ $(()=>{
         }
     })
     //@To remove when over
-    db.remove({},{multi:true}, function(err, numRemoved){
-        if(err)
-            console.log(err.message)
-    })
+    // db.remove({},{multi:true}, function(err, numRemoved){
+    //     if(err)
+    //         console.log(err.message)
+    // })
     db.find({}, function(err,docs){
         for(doc of docs){
             $('#lockedDoors').append(doorToHtml(doc))

@@ -3,6 +3,19 @@
 To implement constraint on door's name I think I will use `Array.prototype.find()` to verify if a door with this name already exist
 
 I use electron's doc to look how to send data to clipboard. Then I create a function `sendToClipboard(identifier)` which get text of element with identifier as html id and then get text to put in clipboard via `clipboard.writeText(...)`. I tested and it works. SO EASY! In 30 min I realised users stories 5 and 6. Next are 4 and 7. They will be a little harder I think.
+---
+#### 1. Start the app
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.nodoor.dev.101017.JPG "main window")
+
+#### 2. Add a new "door"
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.form.add.filled.dev.101017.JPG "new door form filled")
+
+#### 3. Select a door
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.door.opened.dev.101017.JPG "a door has been selected")
+
+#### 4. Copy login to clipboard
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.login.to.clipboard.dev.101017.JPG "login is in the clipboard")
+
 
 ## 09/10/2017
 Just to see it is working as expected I installed nodejs on my old computer with linux mint OS. I installed `curl` then `nodejs` and `npm`, then I git clone the repo in new directory and finally run `npm install`. I launch start command and see my app working as expected on linux, exactly as in windows. I finally installed `vim` to take a look at `package.json`
