@@ -8,7 +8,8 @@ Just to see it is working as expected I installed nodejs on my old computer with
 I need to make my code better now. But after that I'll start users stories 5 and 6 which concern clipboard. luckily electron doc, already talk about [clipboard](https://electron.atom.io/docs/api/clipboard/)
 
 I continued to improve my code and thanks to mocha and unit testing I code correctly. I use ES6 `Function.prototype.apply()`to make pure function. I was a little hard to understand but this is a little because i'm tired.
-
+It seems that `find` or `findIndex`doesn't accept object as parameter.
+So I tried `indexOf`but it always return 1... Useless in fact!
 ## 08/10/2017
 I work a little this morning to find why I can't add a new door... Debugging code help me to don't be too far from solution.
 

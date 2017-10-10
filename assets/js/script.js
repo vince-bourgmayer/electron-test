@@ -61,22 +61,27 @@ $(()=>{
     $("#addDoorBtn").on('click', ()=>{
         let door = {}
         let fields = $('.new-door-field')
-        // fields.map((x)=>{
-        //     setProperty.apply(this, [x, door])
-        // })
-        //The above code let door as undefined...but below code work!
-        applyFunctionOnArray(fields, setProperty, door)
 
-        
+
+
+        //Build the door object
+        applyFunctionOnArray(fields, setProperty, door)
+        //Check if a door with this name already exist
+        // const doorAlreadyExist = lockedDoors.findIndex({name:door.name})
+        // const doorAlreadyExist = lockedDoors.indexOf(door)
+        // console.log(doorAlreadyExist)
+        //Save door in DB
         db.insert(door, function(err, doc){
             if(err)
                 console.log(err)
             else
                 addEltToList(doc, lockedDoors)
         })
+        //Update carousel
         if(door){
             $('#lockedDoors').slick('slickAdd', doorToHtml(door))
         }
+        //Clear form
         applyFunctionOnArray(fields, resetValue, null)
     })
 
