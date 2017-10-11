@@ -37,10 +37,10 @@ $(()=>{
         }
     })
     //@To remove when over
-    db.remove({},{multi:true}, function(err, numRemoved){
-        if(err)
-            console.log(err.message)
-    })
+    // db.remove({},{multi:true}, function(err, numRemoved){
+    //     if(err)
+    //         console.log(err.message)
+    // })
     db.find({}, function(err,docs){
         for(doc of docs){
             $('#lockedDoors').append(doorToHtml(doc))
@@ -56,30 +56,55 @@ $(()=>{
     //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
     $('#node-version').text("Node "+process.versions.node)
     //It seems that it setting parameters in slick lock buttons 
-    $("#addDoorBtn").on('click', ()=>{
-        let door = {}
-        let fields = $('.new-door-field')
-        //Build the door object
-        applyFunctionOnArray(fields, setProperty, door)
-        //Check if a door with this name already exist
-        // const doorAlreadyExist = lockedDoors.findIndex({name:door.name})
-        // const doorAlreadyExist = lockedDoors.indexOf(door)
-        // console.log(doorAlreadyExist)
-        //Save door in DB
-        db.insert(door, function(err, doc){
+    $("#update-btn").on('click', ()=>{
+        //Get current door
+        const doorName = $('#name').text()
+        const doorIndex = lockedDoors.findIndex((x) => {
+            return x.name === doorName
+        })
+        const door = lockedDoors[doorIndex]
+        let doorToUpdate = Object.assign({},door )
+        const fields = $('.update-door-field')
+        //update the door object
+        applyFunctionOnArray(fields, setProperty, doorToUpdate)
+        //update door in db
+        db.update(door, doorToUpdate, function(err){
             if(err)
                 console.log(err)
             else
-                addEltToList(doc, lockedDoors)
+                //Update local list of doors
+                lockedDoors[doorIndex]=doorToUpdate
+                alert("Information updated")
         })
-        //Update carousel
-        if(door){
-            $('#lockedDoors').slick('slickAdd', doorToHtml(door))
-        }
-        //Clear form
-        applyFunctionOnArray(fields, resetValue, null)
     })
-
+    $("#add-btn").on('click', ()=>{
+        if($('#nameField').val().length <1){
+            alert("You can't add an unamed element")
+        }else{
+            let door = $('')
+            let fields = $('.new-door-field')
+            fields.keyup()
+            //Build the door object
+            applyFunctionOnArray(fields, setProperty, door)
+            //Check if a door with this name already exist
+            // const doorAlreadyExist = lockedDoors.findIndex({name:door.name})
+            // const doorAlreadyExist = lockedDoors.indexOf(door)
+            // console.log(doorAlreadyExist)
+            //Save door in DB
+            db.insert(door, function(err, doc){
+                if(err)
+                    console.log(err)
+                else
+                    addEltToList(doc, lockedDoors)
+            })
+            //Update carousel
+            if(door){
+                $('#lockedDoors').slick('slickAdd', doorToHtml(door))
+            }
+            //Clear form
+            applyFunctionOnArray(fields, resetValue, null)
+        }
+    })
     $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){
         obj = lockedDoors[currentSlide]
         $('#name').text(obj.name)
@@ -88,4 +113,8 @@ $(()=>{
         $('#password').val(obj.password)
         $('#delete-btn').val(obj.name)
     })
+
+
+
+
 })

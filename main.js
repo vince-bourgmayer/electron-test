@@ -10,8 +10,8 @@ let doorCreationWindow
 //function to create mainWindow
 function createMainWindow(){
 	mainWindow = new BrowserWindow({
-		width:700, 
-		height:400, 
+		width:760, 
+		height:500, 
 		resizable:false,
 		fullscreen:false,
 		fullscreenable :false,

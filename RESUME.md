@@ -7,6 +7,17 @@ The user story 4 is to protect password from an personn who can be in your back 
 Some pist there:
  + nedb serialization/deserialization (here)[https://stackoverflow.com/questions/42539412/protect-nedb-database-with-user-password]
 
+I duplicated add door function to create update function. Thanks to last modification of user interface, it was so easy!
+First I had to get the current door. Then, find the corresponding object in list of door (got from db at the start of app). Then I duplicate current door object , and set the new property value on the copied object. Then I update db and if everything alright I print a dial box to inform user that data have been updated.
+I wouldn't have to make a copy of door object but the `update(oldObject, newObject, callback)` function need both.
+
+I have to implement a security on create function. Name shouldn't be empty! Because, finally it can't be updated. I though that I should add a test in add function. But I decide to do it in other way. If `input id='name'...` is empty, then `button id='add-btn'` will be disable. So I'll give a listener on 'change' to the input. It wasn't so easy...
++ `$('#nameField').on('keyup', function(){alert($(this).val().length)` and `$('#nameField').on('keyup', ()=>{
+        alert($(this).val().length)` don't give same result. I can't use `()=>{...}` to pass the callback
++ `change`event only trigger when element lose focus so it's not what I need. But `keyup`event doesn't trigger after clear value (when I added a door)
+
+So finally I decide to just add a verification at start of add-door function call.
+
 ## 10/10/2017
 To implement constraint on door's name I think I will use `Array.prototype.find()` to verify if a door with this name already exist
 
