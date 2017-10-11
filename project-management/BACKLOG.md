@@ -54,6 +54,8 @@ Description will be: Start date, story's identifier, task (optionnal), subtask (
 
  + 09/10/2017 10:25 - US 1 - Register a new locked door - make code better - implement US1 constraint
  + 09/10/2017 10:25 - US 1 - Register a new locked door - make code better - find a way to handle lockeddoor list
+ + 11/10/2017 09:34 - US 4 - protect password from other people
+ + 11/10/2017 09:34 - US 7 - change my password or login
 
 
 # Done

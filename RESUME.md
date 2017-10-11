@@ -1,4 +1,12 @@
 # Resume of projet's progress
+##11/10/2017
+I continued to set bootstrap. That make me need to adapt behaviour and in fact, it allows me to remove some part of code. So I succeeded in making it better.
+So I remove the hide/show form/data panel, Change DOM to make it clearer.
+
+The user story 4 is to protect password from an personn who can be in your back and see what is print. But then I realise that sometimes password can't be copy and paste as it is on my bank website. Moreover, nedb write data in clear so if someone can find the file and open it, he can access to all your password. It would be a little problematics... So I need to protect nedb data file and 
+Some pist there:
+ + nedb serialization/deserialization (here)[https://stackoverflow.com/questions/42539412/protect-nedb-database-with-user-password]
+
 ## 10/10/2017
 To implement constraint on door's name I think I will use `Array.prototype.find()` to verify if a door with this name already exist
 
@@ -22,8 +30,6 @@ I'm a little happy of what I've done yet. But I know that I can do more...
 I looked for bootstrap and install it: `npm install bootstrap --save`. But I should completely rethink design. Then, I made paper drawn schema. I began to write clean html and I thought that I should change behaviour of application, specially when user want to create a new element. In this case, a simple input to get name is usefull, then it add the element with just a name. The central interface could be a permanent form and user can always update infos which would be print in `input` by clicking on a "update" button, or remove the element on clicking on "delete button"
 
 I know I shouldn't anticipate but I also installed select2 and bootstrap theme for select 2. Because I think that later I will implement tag management to be able to filter door. but for later
-
-Ps: I know there is a moskito ready to pull out my blood here...I ear his "bzzzzzz". Let's share some blood tonight!
 
 
 ## 09/10/2017

@@ -1,7 +1,4 @@
 .door{background-color: lightblue;text-align: center;font-size: 15px;}
 #zone-center{height:200px;}
 
-.door div.btn-in-carousel {visibility: hidden;}
-.door.slick-current div.btn-in-carousel {visibility: visible;}
-
 footer{background-color: grey; color:white;text-align:center;}
