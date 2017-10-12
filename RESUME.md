@@ -1,5 +1,28 @@
 # Resume of projet's progress
-##11/10/2017
+## 12/10/2017
+I fight with slick and others to find a way to print an information when there are no doors and to hide it when user add one. It was a little complicated for many reasons.
++ `()=>{...}` is not well supported because of JQuery
++ `slick` don't offer a function to easily get number of slide.
++ I had to find the correct event to listen. `afterChange` or `beforeChange` doesn't work as I want. So I used `reInit` and it works. 
++ I can't attach a listener to two event, or to tell it in an other way: I can't have two event bind to same behaviour in one command.
+Something like `$(myelement).on(['init', 'reInit'], callback)` would be perfect. 
+
+I lost between one and two hours to implement this little behaviour...grrr!
+
+New look of the app :
+#### 1. First start
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.nodoor.dev.121017.JPG "main window")
+
+#### 2. Add a new "door" and select it
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.select.newdoor.dev.121017.JPG "new door form filled")
+
+#### 3. Update the door
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.update.newdoor.dev.121017.JPG "a door has been selected")
+
+#### 4. What you'll get after adding many doors
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.dev.121017.JPG "login is in the clipboard")
+
+## 11/10/2017
 I continued to set bootstrap. That make me need to adapt behaviour and in fact, it allows me to remove some part of code. So I succeeded in making it better.
 So I remove the hide/show form/data panel, Change DOM to make it clearer.
 

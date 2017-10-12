@@ -46,10 +46,19 @@ $(()=>{
             $('#lockedDoors').append(doorToHtml(doc))
         }
         lockedDoors = docs
-        $('#lockedDoors').slick({
+        let slick = $('#lockedDoors').slick({
             centerMode:true,
             slidesToShow:5,
-            focusOnSelect: true
+            focusOnSelect: true,
+        })
+        if(lockedDoors.length >0){ //hide at initialisation if there is some door
+            $('#no-door-text').hide()   
+        }
+        slick.on('reInit', function(event, slick){
+                if(slick.slideCount > 0) //If there is no slide
+                    $('#no-door-text').hide()
+                else //If user has removed all slide
+                    $('#no-door-text').show()
         })
     })
 
@@ -77,7 +86,7 @@ $(()=>{
                 alert("Information updated")
         })
     })
-    $("#add-btn").on('click', ()=>{
+    $("#add-btn").on('click', function(){
         if($('#nameField').val().length <1){
             alert("You can't add an unamed element")
         }else{
@@ -91,6 +100,7 @@ $(()=>{
             // const doorAlreadyExist = lockedDoors.indexOf(door)
             // console.log(doorAlreadyExist)
             //Save door in DB
+
             db.insert(door, function(err, doc){
                 if(err)
                     console.log(err)
@@ -101,8 +111,11 @@ $(()=>{
             if(door){
                 $('#lockedDoors').slick('slickAdd', doorToHtml(door))
             }
+
+
             //Clear form
             applyFunctionOnArray(fields, resetValue, null)
+            // console.log(len)
         }
     })
     $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){

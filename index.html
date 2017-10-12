@@ -17,7 +17,6 @@
                 <input type="text" placeholder="Name..." aria-label="Name..." class="form-control new-door-field" name="name" id="nameField"/>
                  <span class="input-group-btn">
                     <button id="add-btn" class="btn btn-secondary btn-success" type="button">Create</button>
-                    <!-- onclick="printCreateDoorForm()" -->
                 </span>
             </div>
         </div>
@@ -43,6 +42,7 @@
     <!-- Row to select door -->
     <div class="row" id='carousel'>
         <div class="col-xs-12">
+            <p id="no-door-text" class="text-center">No door now</p>
             <div id="lockedDoors" >
             </div>
         </div>
@@ -50,51 +50,47 @@
     <!-- Row to print data or to update data -->
     <hr/>
     <div class="row">
-        <div class="col-xs-12">
-            <div id="zone-center">
-                <div id="show-data">
-                    <div id="zone-text">
-                         <div class="row text-center">
-                            <h1><span id="name"></span></h1>
-                        </div>
-                        <div class="row">
-                            <div class="input-group">
-                                <span class="input-group-addon">URL</span>
-                                <input type="text" class="form-control update-door-field" placeholder="add a URL" id="url" name="url">
-                                <span class="input-group-btn">
-                                    <button disabled class="btn btn-secondary" type="button">Open in default browser</button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-group">
-                                <span class="input-group-addon">Login</span>
-                                <input type="text" class="form-control update-door-field" placeholder="add a login" id="login" name="login">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button" onclick="sendToClipboard('login')">copy to clipboard</button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-group">
-                                <span class="input-group-addon">Password</span>
-                                <input type="text" class="form-control update-door-field" placeholder="add a password" id="password" name="password">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button" onclick="sendToClipboard('password')">copy to clipboard</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="zone-button" class="row">
-                        <div>
-                            <button type="button" class="btn btn-secondary pull-right btn-danger" id="delete-btn" disabled>Delete</button>
-                            <button type="button" class="btn btn-secondary pull-right  btn-success" id="update-btn">Update information</button>
-
-                        </div>
-                        <div class="clearfix"></div>
+        <div class="col-xs-10 col-xs-offset-1">
+            <div id="zone-text">
+                 <div class="row text-center" id="title">
+                    <h3><span id="name"></span></h3>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <span class="input-group-addon">http://</span>
+                        <input type="text" class="form-control update-door-field" placeholder="add a URL" id="url" name="url">
+                        <span class="input-group-btn">
+                            <button disabled class="btn btn-secondary" type="button">Open</button>
+                        </span>
                     </div>
                 </div>
-            </div>       
+                <div class="row">
+                    <div class="input-group">
+                        <span class="input-group-addon">Login</span>
+                        <input type="text" class="form-control update-door-field" placeholder="add a login" id="login" name="login">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="button" onclick="sendToClipboard('login')">copy to clipboard</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <span class="input-group-addon">Password</span>
+                        <input type="text" class="form-control update-door-field" placeholder="add a password" id="password" name="password">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="button" onclick="sendToClipboard('password')">copy to clipboard</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="zone-button" class="row">
+                <div>
+                    <button type="button" class="btn btn-secondary pull-right btn-danger" id="delete-btn" disabled>Delete</button>
+                    <button type="button" class="btn btn-secondary pull-right  btn-success" id="update-btn">Update information</button>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
         </div>
     </div>
     <hr/>
