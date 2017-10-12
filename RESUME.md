@@ -14,13 +14,13 @@ New look of the app :
 ![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.nodoor.dev.121017.JPG "main window")
 
 #### 2. Add a new "door" and select it
-![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.select.newdoor.dev.121017.JPG "new door form filled")
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.select.newdoor.dev.121017.JPG "new door selected")
 
 #### 3. Update the door
-![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.update.newdoor.dev.121017.JPG "a door has been selected")
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.update.newdoor.dev.121017.JPG "data updated")
 
 #### 4. What you'll get after adding many doors
-![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.dev.121017.JPG "login is in the clipboard")
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.dev.121017.JPG "App is used")
 
 ## 11/10/2017
 I continued to set bootstrap. That make me need to adapt behaviour and in fact, it allows me to remove some part of code. So I succeeded in making it better.

@@ -9,7 +9,7 @@
 |  4 | User | protect password from other people | I can sleep on my two ears | 4 | 4 |
 |  5 | User | ~~get password in clipboard~~      | I don't need to see it     | 3 | 2 |
 |  6 | User | ~~get login in clipboard~~         | I don't need to see it     | 3 | 2 |
-|  7 | User | change my password or login        | I won't cry if I lost it   | 2 | 2 |
+|  7 | User | ~~change my password or login~~    | I won't cry if I lost it   | 2 | 2 |
 |  8 | User | search a locked door by name       | to find them quicker       | 4 | 1 |
 |  9 | User | delete a locked door               | to keep only what's needed | 4 | 1 |
 | 10 | User | ~~see my login~~                   | to remember it             | 1 | 1 |
@@ -55,7 +55,7 @@ Description will be: Start date, story's identifier, task (optionnal), subtask (
  + 09/10/2017 10:25 - US 1 - Register a new locked door - make code better - implement US1 constraint
  + 09/10/2017 10:25 - US 1 - Register a new locked door - make code better - find a way to handle lockeddoor list
  + 11/10/2017 09:34 - US 4 - protect password from other people
- + 11/10/2017 09:34 - US 7 - change my password or login
+
 
 
 # Done
@@ -88,6 +88,8 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
 ---
  + 10/10/2017 14:30 - 10/10/2017 15:00 - US 5 - get password in clipboard 
  + 10/10/2017 14:30 - 10/10/2017 15:00 - US 6 - get login in clipboard 
-
+---
+ + 11/10/2017 09:34 - 12/10/2017 16:34 - US 7 - change my password or login
+ 
 # Forgiven
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window
