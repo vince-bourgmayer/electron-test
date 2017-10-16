@@ -13,7 +13,8 @@ function createMainWindow(){
 		resizable:false,
 		fullscreen:false,
 		fullscreenable :false,
-		title: "Password Keeper"
+		title: "Password Keeper",
+		icon: path.join(__dirname, 'assets/icons/png/64x64.png')
 	})
 
 	//Disable default menu

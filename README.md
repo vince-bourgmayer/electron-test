@@ -8,8 +8,8 @@ git clone https://github.com/vince-bourgmayer/electron-test
 then `npm install` from the main-directory
 
 ### Run app
-On windows: `.\node_modules\.bin\electron .` or `npm run start`
-On Linux: `./node_modules/.bin/electron .`
++ On windows: `.\node_modules\.bin\electron .` or `npm run start`
++ On Linux: `./node_modules/.bin/electron .`
 
 ### Link
 + [Resume of progress](https://github.com/vince-bourgmayer/electron-test/blob/master/RESUME.md)

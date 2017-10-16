@@ -5,6 +5,9 @@ After a little break, I come back. I choose a picture to represent the "locked d
 #### 1. New UI
 ![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.dev.161017.JPG "main window")
 
+I change icon of the app. The one I used isn't the final one.
+This [tuto](https://www.christianengvall.se/electron-app-icons/) and this [website](https://iconverticons.com/online/) helped me.
+
 ## 12/10/2017
 I fight with slick and others to find a way to print an information when there are no doors and to hide it when user add one. It was a little complicated for many reasons.
 + `()=>{...}` is not well supported because of JQuery
