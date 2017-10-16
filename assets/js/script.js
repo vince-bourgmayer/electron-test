@@ -2,17 +2,18 @@
 $(()=>{
 	require('slick-carousel')
     const Datastore = require('nedb')
-    let lockedDoors
+    window.lockedDoors = []
+    // let lockedDoors
+
+
     /**function **/
     //Function to create the carousel element of a door
     function doorToHtml(door){
-        //This function is pure.
         // return "<div class='door'><div><img src='assets/images/lockedDoor-green-small.png' class='img-fluid' alt='Responsive image'><h3>"+door.name+"</h3></div></div>"
         return "<div class='door'><div><div class='lock-img'></div><h5>"+door.name+"</h5></div></div>"
     }
-    //Attach a property to an object
+    //Attach a property (object with name and value) to an object
     function setProperty(source, objet){
-        // return {attr: value} => Doesn't work
         return Object.defineProperty(objet, source.name, {value: source.value, enumerable:true})
     }
     //Add an element to a liste and return the list
@@ -46,13 +47,15 @@ $(()=>{
         for(doc of docs){
             $('#lockedDoors').append(doorToHtml(doc))
         }
-        lockedDoors = docs
+        window.lockedDoors = docs
         let slick = $('#lockedDoors').slick({
             centerMode:true,
             slidesToShow:5,
             focusOnSelect: true,
+            prevArrow: "<button type='button' class='slick-prev'><img src='assets/images/left-arrow-red-xs.png'/></button>",
+            nextArrow: "<button type='button' class='slick-next'><img src='assets/images/right-arrow-red-xs.png'/></button>"
         })
-        if(lockedDoors.length >0){ //hide at initialisation if there is some door
+        if(window.lockedDoors.length >0){ //hide at initialisation if there is some door
             $('#no-door-text').hide()   
         }
         slick.on('reInit', function(event, slick){
@@ -69,10 +72,10 @@ $(()=>{
     $("#update-btn").on('click', ()=>{
         //Get current door
         const doorName = $('#name').text()
-        const doorIndex = lockedDoors.findIndex((x) => {
+        const doorIndex = window.lockedDoors.findIndex((x) => {
             return x.name === doorName
         })
-        const door = lockedDoors[doorIndex]
+        const door = window.lockedDoors[doorIndex]
         let doorToUpdate = Object.assign({},door )
         const fields = $('.update-door-field')
         //update the door object
@@ -83,7 +86,7 @@ $(()=>{
                 console.log(err)
             else
                 //Update local list of doors
-                lockedDoors[doorIndex]=doorToUpdate
+                window.lockedDoors[doorIndex]=doorToUpdate
                 alert("Information updated")
         })
     })
@@ -106,21 +109,18 @@ $(()=>{
                 if(err)
                     console.log(err)
                 else
-                    addEltToList(doc, lockedDoors)
+                    addEltToList(doc, window.lockedDoors)
             })
             //Update carousel
             if(door){
                 $('#lockedDoors').slick('slickAdd', doorToHtml(door))
             }
-
-
             //Clear form
             applyFunctionOnArray(fields, resetValue, null)
-            // console.log(len)
         }
     })
     $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){
-        obj = lockedDoors[currentSlide]
+        obj = window.lockedDoors[currentSlide]
         $('#name').text(obj.name)
         $('#url').val(obj.url)
         $('#login').val(obj.login)

@@ -8,6 +8,11 @@ After a little break, I come back. I choose a picture to represent the "locked d
 I change icon of the app. The one I used isn't the final one.
 This [tuto](https://www.christianengvall.se/electron-app-icons/) and this [website](https://iconverticons.com/online/) helped me.
 
+I looked for a way to manage better the list of doors. Til now, I used a global variable define at the begining of 'document ready' (jquery) but in a functionnal programming way it is bad to use a global variable. It is because of namespace, ...
+
+I give a try by attaching data to window object and it worked but I know it's not a good way. In fact I'd like to have a simple and easy way to give the array of data to slick and to manipulate it but it is not possible with slick...
+
+Can't concentrate now...
 ## 12/10/2017
 I fight with slick and others to find a way to print an information when there are no doors and to hide it when user add one. It was a little complicated for many reasons.
 + `()=>{...}` is not well supported because of JQuery

@@ -5,8 +5,10 @@ footer{background-color: grey; color:white;text-align:center;}
 .door:hover{cursor:pointer;}
 .door .lock-img{background-position:center center;min-height: 100px;background-image: url('../images/lockedDoor-blue-small.png'); background-repeat:no-repeat;}
 .door.slick-current .lock-img{background-image: url('../images/lockedDoor-green-small.png'); background-repeat:no-repeat;}
+.slick-arrow {font-weight:bold;background:transparent;color:black;font-size: 14px; min-height: 100%;}
+.slick-prev{left:-45px;}
 #create-and-filter-zone{margin-top: 2px}
 #zone-text #title{min-height:45px;}
 #zone-button {margin:5px;}
-#delete-btn {/*margin-right: 2px;*/ margin-left: 2px}
+#delete-btn {margin-left: 2px}
 
