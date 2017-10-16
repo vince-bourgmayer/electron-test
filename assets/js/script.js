@@ -7,7 +7,8 @@ $(()=>{
     //Function to create the carousel element of a door
     function doorToHtml(door){
         //This function is pure.
-        return "<div class='door'><div><h3>"+door.name+"</h3></div></div>"
+        // return "<div class='door'><div><img src='assets/images/lockedDoor-green-small.png' class='img-fluid' alt='Responsive image'><h3>"+door.name+"</h3></div></div>"
+        return "<div class='door'><div><div class='lock-img'></div><h5>"+door.name+"</h5></div></div>"
     }
     //Attach a property to an object
     function setProperty(source, objet){

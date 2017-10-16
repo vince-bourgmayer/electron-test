@@ -1,4 +1,10 @@
 # Resume of projet's progress
+## 16/10/2017
+After a little break, I come back. I choose a picture to represent the "locked door" which is te website or things for what we need a password and login to access. I did it with google and a search on pictures which can be used for non commercial project. Then I made little change in UI again.
+
+#### 1. New UI
+![alt text](https://github.com/vince-bourgmayer/electron-test/blob/master/project-management/img/mainWindow.dev.161017.JPG "main window")
+
 ## 12/10/2017
 I fight with slick and others to find a way to print an information when there are no doors and to hide it when user add one. It was a little complicated for many reasons.
 + `()=>{...}` is not well supported because of JQuery
