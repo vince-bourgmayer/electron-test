@@ -112,13 +112,32 @@ $(()=>{
             applyFunctionOnArray(fields, resetValue, null)
         }
     })
+    $("#delete-btn").on('click', function(){
+        const index = $(this).val()
+        obj = window.lockedDoors.slice(index, 1) //Supprime de la liste courante
+        //Il faut supprimer de la BDD
+        $('#lockedDoors').slick('slickRemove',$(this).val())
+        $('#name').text('')
+        $('#url').val('')
+        $('#login').val('')
+        $('#password').val('')
+        $('#delete-btn').val()
+        $('#delete-btn').attr('disabled', true)
+        //little problems index of lockedoors are decaled
+    })
+    //Method utilisé après le changement de slide
     $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){
+        console.log('afterchange')        
         obj = window.lockedDoors[currentSlide]
         $('#name').text(obj.name)
         $('#url').val(obj.url)
         $('#login').val(obj.login)
         $('#password').val(obj.password)
-        $('#delete-btn').val(obj.name)
+        $('#delete-btn').val(currentSlide)
+        $('#delete-btn').attr('disabled', false)
+
+        //enable delete-btn 
+        //But what if user destroy all door? in this cas delete-btn should be disable 
     })
 
 
