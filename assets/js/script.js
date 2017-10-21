@@ -1,12 +1,34 @@
 
 $(()=>{
 	require('slick-carousel')
+    const crypto = require('crypto')
     const Datastore = require('nedb')
     window.lockedDoors = []
-    // let lockedDoors
+    //Just for test
+    const algo = "aes192"
+    const password = 'toto'
+
+
+    function cryptData(data){
+        const cipher = crypto.createCipher(algo,password) //Cipher instance can only crypt one data
+        let crypted = cipher.update(data,'utf8','base64')
+        crypted += cipher.final('base64')
+        return crypted
+    }
+    function decryptData(crypted){
+        const decipher = crypto.createDecipher(algo,password)
+        let data = decipher.update(crypted,'base64','utf8')
+        data += decipher.final('utf8')
+        return data
+    }
 
     //Load Data
-    let db = new Datastore({filename: 'db/keychain.db', autoload: true});
+    let db = new Datastore({
+        filename: 'db/keychain.db',
+        autoload: true,
+        afterSerialization: cryptData,
+        beforeDeserialization:decryptData
+    });
     db.loadDatabase(function(err){
         if(err){
             console.log('DB issue while loading Data')

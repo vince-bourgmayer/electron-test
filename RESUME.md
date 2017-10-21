@@ -7,6 +7,28 @@ Yesterday
 I tried to clean my source with atlassian and it causes more trouble. But, in the end, I find solution this morning.
 I opened a git terminal from sourcetree and then wrote `git reset --hard <old-commit-id>` and `git push -f <remote-name> <branch-name>`. Now it's good.
 
+I did search to find how to cipher data in db because a human readable file for DB is a open door!
+I discover `crypto` module of Node.js:
++ [Tuto](https://www.babeuloula.fr/blog/crypter-et-decrypter-une-chaine-de-caracteres-avec-node-js.html)
++ [Official doc](https://nodejs.org/api/crypto.html)
+
+thanks to [this link](https://www.npmjs.com/package/nedb-fsync) I found again how to crypt data:
++ with option `afterSerialization` for encrypt data after serialization and before the save
++ with option `beforeDeserialization` which is reverse
+
+_NB:_
+1. After many little try/fail and error about cipher.update I find that an instance of cipher can only be used to encrypt one data :
+
+	> ___cipher.final([outputEncoding])___
+
+	>[...]
+
+	>Once the cipher.final() method has been called, the Cipher object can no longer be used to encrypt data. ___Attempts to call cipher.final() more than once will result in an error being thrown.___
+
+2. I also found an extension for chrome for viewing markdown file rendered. I won't need to commit and push to see result on github.com now.
+
+3. A little google trad and I learned that "cipher" means "Chiffrer"
+
 
 ## 18/10/2017
  I took back function from script.js and put them into index.html til I'll make a special file. Because there was no reason that this function had to wait that document is ready to be loaded. I've no indicator but it seems to be faster at start.
