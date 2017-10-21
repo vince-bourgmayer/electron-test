@@ -5,34 +5,8 @@ $(()=>{
     window.lockedDoors = []
     // let lockedDoors
 
-
-    /**function **/
-    //Function to create the carousel element of a door
-    function doorToHtml(door){
-        // return "<div class='door'><div><img src='assets/images/lockedDoor-green-small.png' class='img-fluid' alt='Responsive image'><h3>"+door.name+"</h3></div></div>"
-        return "<div class='door'><div><div class='lock-img'></div><h5>"+door.name+"</h5></div></div>"
-    }
-    //Attach a property (object with name and value) to an object
-    function setProperty(source, objet){
-        return Object.defineProperty(objet, source.name, {value: source.value, enumerable:true})
-    }
-    //Add an element to a liste and return the list
-    function addEltToList(elt, list){
-        return list.push(elt)
-    }
-    //Set value of an object to ''
-    function resetValue(object){
-        object.value = ''
-        return object
-    }
-    //Function to apply a function with some extra args on array
-    function applyFunctionOnArray(array, func, args){
-        for(elt of array){
-            func.apply(this, [elt, args])
-        }
-    }
     //Load Data
-    let db = new Datastore({filename: 'keychain.db', autoload: true});
+    let db = new Datastore({filename: 'db/keychain.db', autoload: true});
     db.loadDatabase(function(err){
         if(err){
             console.log('DB issue while loading Data')
@@ -65,9 +39,6 @@ $(()=>{
                     $('#no-door-text').show()
         })
     })
-
-    //I wonder if it is better to to like that or to use <script>document.write(...) directly in page
-    $('#node-version').text("Node "+process.versions.node)
     //It seems that it setting parameters in slick lock buttons 
     $("#update-btn").on('click', ()=>{
         //Get current door

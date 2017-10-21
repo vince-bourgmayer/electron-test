@@ -98,10 +98,13 @@
         <div class='row'>
             <p>Vincent Bourgmayer | 
             <span id="node-version"></span> | 
-            <span id="chrome-version">Chrome <script>document.write(process.versions.chrome)</script></span> | 
-            <span id="electron-version">Electron <script>document.write(process.versions.electron)</script></span></p>
+            <span id="chrome-version">Chrome </span> | 
+            <span id="electron-version">Electron</span></p>
         </div>
         <script>
+            document.getElementById("node-version").innerHTML = "Chrome "+process.versions.node
+            document.getElementById("chrome-version").innerHTML = "Chrome "+process.versions.chrome
+            document.getElementById("electron-version").innerHTML="Electron "+process.versions.electron
             //Load Jquery
             window.$ =window.jQuery = require('jquery')
             const {ipcRenderer, clipboard} = require('electron')
@@ -112,6 +115,29 @@
                 alert("L'élément est dans le presse papier")
             }
             require(path.resolve('assets/js/script.js'))
+            //Function to create the carousel element of a door
+            function doorToHtml(door){
+                return "<div class='door'><div><div class='lock-img'></div><h5>"+door.name+"</h5></div></div>"
+            }
+            //Attach a property (object with name and value) to an object
+            function setProperty(source, objet){
+                return Object.defineProperty(objet, source.name, {value: source.value, enumerable:true})
+            }
+            //Add an element to a liste and return the list
+            function addEltToList(elt, list){
+                return list.push(elt)
+            }
+            //Set value of an object to ''
+            function resetValue(object){
+                object.value = ''
+                return object
+            }
+            //Function to apply a function with some extra args on array
+            function applyFunctionOnArray(array, func, args){
+                for(elt of array){
+                    func.apply(this, [elt, args])
+                }
+            }
         </script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- <script src="./node_modules/select2/dist/js/select2.full.min.js"></script> -->

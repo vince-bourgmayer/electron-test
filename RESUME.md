@@ -1,4 +1,16 @@
 # Resume of projet's progress
+## 21/10/2017
+I finally decide that writing my carousel isn't a need yet. First of all, I want app to work before to start this kind of dev. So I let this aside and make this kind of optimisation or change later.
+Yesterday 
+
+
+I tried to clean my source with atlassian and it causes more trouble. But, in the end, I find solution this morning.
+I opened a git terminal from sourcetree and then wrote `git reset --hard <old-commit-id>` and `git push -f <remote-name> <branch-name>`. Now it's good.
+
+
+## 18/10/2017
+ I took back function from script.js and put them into index.html til I'll make a special file. Because there was no reason that this function had to wait that document is ready to be loaded. I've no indicator but it seems to be faster at start.
+
 ## 16/10/2017
 After a little break, I come back. I choose a picture to represent the "locked door" which is te website or things for what we need a password and login to access. I did it with google and a search on pictures which can be used for non commercial project. Then I made little change in UI again.
 

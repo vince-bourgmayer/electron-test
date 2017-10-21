@@ -53,7 +53,6 @@ Description will be: Start date, story's identifier, task (optionnal), subtask (
 
 
  + 09/10/2017 10:25 - US 1 - Register a new locked door - make code better - implement US1 constraint
- + 09/10/2017 10:25 - US 1 - Register a new locked door - make code better - find a way to handle lockeddoor list
  + 11/10/2017 09:34 - US 4 - protect password from other people
 
 
@@ -93,3 +92,6 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  
 # Forgiven
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window
+
+# For Later
+ + 09/10/2017 10:25 - 21/10/2017 10:32 - US 1 - Register a new locked door - make code better - find a way to handle lockeddoor list
