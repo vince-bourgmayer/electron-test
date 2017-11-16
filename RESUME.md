@@ -1,4 +1,24 @@
 # Resume of projet's progress
+## 16/11/2017
+Project work as expected for now.
+
++ Using promises helped me a lot! [mozilla doc about promise](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise)
++ I just had a little hard to find how to refresh carousel after the user deletes an item in the middle of the carousel. But I've finally [found](https://github.com/kenwheeler/slick/issues/547) and the `.slick('refresh')`.
+
+
+## 15/11/2017
+Start using promises to resolve some problems...
+
+## 07/11/2017
+It makes few day since i worked there. But I found how to lead next step.
+First I'll reorganise code because I will remove use of array of doors. I'll only use slick carousel and in memory db because there is no need to use an indermediate array.
+
+I tried to pull out slick initialization from find all query at initialisation but I got some troubles because before that, it was instancied in a callback. Now I switched slick init with `db.find({})`. So i had to call `slickAdd` method to add initial doors.
+
+:some read on:
++ [`closure`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
++ [`callback hell`](http://callbackhell.com/)
+
 ## 21/10/2017
 I finally decide that writing my carousel isn't a need yet. First of all, I want app to work before to start this kind of dev. So I let this aside and make this kind of optimisation or change later.
 Yesterday 

@@ -1,9 +1,8 @@
-
-$(()=>{
+$(function()
+{
 	require('slick-carousel')
     const crypto = require('crypto')
     const Datastore = require('nedb')
-    window.lockedDoors = []
     //Just for test
     const algo = "aes192"
     const password = 'toto'
@@ -22,125 +21,215 @@ $(()=>{
         return data
     }
 
-    //Load Data
-    let db = new Datastore({
+    /*
+    *
+    * Init and load db
+    *
+    */
+    const db = new Datastore({
         filename: 'db/keychain.db',
         autoload: true,
         afterSerialization: cryptData,
         beforeDeserialization:decryptData
-    });
+    })
     db.loadDatabase(function(err){
-        if(err){
+        if(err)
             console.log('DB issue while loading Data')
-        }
     })
     //@To remove when over
     // db.remove({},{multi:true}, function(err, numRemoved){
     //     if(err)
     //         console.log(err.message)
     // })
-    db.find({}, function(err,docs){
-        for(doc of docs){
-            $('#lockedDoors').append(doorToHtml(doc))
-        }
-        window.lockedDoors = docs
-        let slick = $('#lockedDoors').slick({
-            centerMode:true,
-            slidesToShow:5,
-            focusOnSelect: true,
-            prevArrow: "<button type='button' class='slick-prev'><img src='assets/images/left-arrow-red-xs.png'/></button>",
-            nextArrow: "<button type='button' class='slick-next'><img src='assets/images/right-arrow-red-xs.png'/></button>"
-        })
-        if(window.lockedDoors.length >0){ //hide at initialisation if there is some door
-            $('#no-door-text').hide()   
-        }
-        slick.on('reInit', function(event, slick){
-                if(slick.slideCount > 0) //If there is no slide
-                    $('#no-door-text').hide()
-                else //If user has removed all slide
-                    $('#no-door-text').show()
-        })
+    let slick = $('#lockedDoors').slick({
+        centerMode:true,
+        slidesToShow:5,
+        focusOnSelect: true,
+        prevArrow: "<button type='button' class='slick-prev'><img src='assets/images/left-arrow-red-xs.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next'><img src='assets/images/right-arrow-red-xs.png'/></button>"
     })
+    slick.on('reInit', function(event, slick){
+            if(slick.slideCount > 0) //If there is no slide
+                $('#empty-text').hide()
+            else //If user has removed all slide
+                $('#empty-text').show()
+    })
+    //Create dom element from db
+    db.find({}, function(err,docs){ //Find all
+        if(docs.length >0){
+            $('#empty-text').hide()//hide an info if there is doors 
+            for(doc of docs)
+            {
+                $('#lockedDoors').slick('slickAdd', doorToHtml(doc))
+            }     
+        }
+    })
+
     //It seems that it setting parameters in slick lock buttons 
     $("#update-btn").on('click', ()=>{
-        //Get current door
-        const doorName = $('#name').text()
-        const doorIndex = window.lockedDoors.findIndex((x) => {
-            return x.name === doorName
-        })
-        const door = window.lockedDoors[doorIndex]
-        let doorToUpdate = Object.assign({},door )
-        const fields = $('.update-door-field')
-        //update the door object
-        applyFunctionOnArray(fields, setProperty, doorToUpdate)
-        //update door in db
-        db.update(door, doorToUpdate, function(err){
-            if(err)
-                console.log(err)
-            else
-                //Update local list of doors
-                window.lockedDoors[doorIndex]=doorToUpdate
-                alert("Information updated")
-        })
-    })
-    $("#add-btn").on('click', function(){
-        if($('#nameField').val().length <1){
-            alert("You can't add an unamed element")
-        }else{
-            let door = $('')
-            let fields = $('.new-door-field')
-            fields.keyup()
-            //Build the door object
-            applyFunctionOnArray(fields, setProperty, door)
-            //Check if a door with this name already exist
-            // const doorAlreadyExist = lockedDoors.findIndex({name:door.name})
-            // const doorAlreadyExist = lockedDoors.indexOf(door)
-            // console.log(doorAlreadyExist)
-            //Save door in DB
-
-            db.insert(door, function(err, doc){
+        const doorName = $('#name').text() //Get current door name from html
+        const oldState = getItem(doorName)
+        oldState.then(function(value)
+        {
+            //Create newState of the door
+            let newState = Object.assign({},value)
+            //Get inputs from form
+            const fields = $('.update-door-field')
+            //update the door object
+            applyFunctionOnArray(fields, setProperty, newState)
+            //update door in db --actual mode is a replace docr by doorToUpdate --
+            db.update(value, newState, function(err)
+            {
                 if(err)
                     console.log(err)
                 else
-                    addEltToList(doc, window.lockedDoors)
+                    alert("Information updated")
+            })        
+        })
+    })
+    //if user want to add a new item
+    $("#add-btn").on('click', function()
+    {
+        if($('#nameField').val().length <1)
+            alert("You can't add an unamed element")
+        else
+        {
+            const newDoor = {name: $('#nameField').val()} //Build a simple object from input value
+            const promise1 = getNumberOfMatchingElement(newDoor) //search the number of existing element with this name
+            
+            promise1.then(function(value){
+                //if there is no element with this name
+                if(value == 0)
+                    return saveNew(newDoor) //return a new Promise for db saving
+                else//return a failed rejected promiss allow the second then
+                    return Promise.reject('Sorry but this name already exist')
             })
-            //Update carousel
-            if(door){
-                $('#lockedDoors').slick('slickAdd', doorToHtml(door))
-            }
-            //Clear form
-            applyFunctionOnArray(fields, resetValue, null)
+            .then(function(value)
+            { //db saving then process
+                //If it's okay add element in carousel
+                $('#lockedDoors').slick('slickAdd', doorToHtml(value))
+                .slick('refresh')
+                $('#nameField').val('') //reset input
+            }, function(reason)
+            {
+                //If it's not okay (as if name already exist)
+                //Alert the user with the reason
+                //@NB: user can't get db error because saveNew
+                //reject a predefined string
+                alert(reason)
+            })
         }
     })
-    $("#delete-btn").on('click', function(){
-        const index = $(this).val()
-        obj = window.lockedDoors.slice(index, 1) //Supprime de la liste courante
-        //Il faut supprimer de la BDD
-        $('#lockedDoors').slick('slickRemove',$(this).val())
-        $('#name').text('')
-        $('#url').val('')
-        $('#login').val('')
-        $('#password').val('')
-        $('#delete-btn').val()
-        $('#delete-btn').attr('disabled', true)
-        //little problems index of lockedoors are decaled
+
+    //If user want to delete element
+    $("#delete-btn").on('click', function()
+    {
+        const doorName = getCurrentSlideId()
+        //Supprime l'objet de la DB
+        const promise = remove({name:doorName})
+        promise.then(function(value)
+        {
+
+            const slickCurrentSlideIndex = $('#lockedDoors').slick('slickCurrentSlide')
+            console.log(slickCurrentSlideIndex)
+            //Supprime le slide dans le carousel
+            $('#lockedDoors').slick('slickRemove',slickCurrentSlideIndex)
+            .slick('refresh') //hard to find because it is not in the official doc!
+
+            //Clear form
+            $('#name').text('')
+            $('#url').val('')
+            $('#login').val('')
+            $('#password').val('')
+            $('#delete-btn').val('')
+            $('#delete-btn').attr('disabled', true)
+            alert("Item has been deleted")
+        })
     })
     //Method utilisé après le changement de slide
-    $("#lockedDoors").on('afterChange', function(event, slick, currentSlide, nextSlide){
-        console.log('afterchange')        
-        obj = window.lockedDoors[currentSlide]
-        $('#name').text(obj.name)
-        $('#url').val(obj.url)
-        $('#login').val(obj.login)
-        $('#password').val(obj.password)
-        $('#delete-btn').val(currentSlide)
-        $('#delete-btn').attr('disabled', false)
-
-        //enable delete-btn 
-        //But what if user destroy all door? in this cas delete-btn should be disable 
+    $("#lockedDoors").on('afterChange', function(event, slick, currentSlide)
+    {
+        console.log(currentSlide)
+        showCurrentData()
     })
 
+    function remove(obj)
+    {
+        return new Promise(function(resolve,reject)
+        {
+            db.remove(obj, {}, function(err, numRemoved)
+            {
+                if(!err)
+                    resolve(numRemoved)
+                else
+                    reject(err)
+            })
+        })
+    }
+    //Get current door name
+    function getCurrentSlideId()
+    {
+        return $('.slick-current').attr('id')
+    }
+    //Affich data of object
+    function printCurrentInformation( doc )
+    {
+        $( '#name' ).text( doc.name )
+        $( '#url' ).val( doc.url )
+        $( '#login' ).val( doc.login )
+        $( '#password' ).val( doc.password )   
+    }
+    //Get currentObject from its name
+    function getItem(currentId)
+    {
+        //Create a promise to get data
+        return new Promise(function(resolve, reject)
+        {
+            db.findOne({name:currentId}, function(err,doc)
+            {
+                if(!err)
+                    resolve(doc)
+                else
+                    reject('getItem Ko') 
+            })
+        })
+    }
+    //Get door corresponding to current slide of carousel and print its data
+    function showCurrentData()
+    {
+        const doorName = getCurrentSlideId() //Get current door name
+        const promise = getItem(doorName) //Call function to get promise
+        //If promise is kept
+        promise.then(function(value)
+        {
+            printCurrentInformation(value)
+            $('#delete-btn').attr('disabled', false)            
+        })       
+    }
 
-
-
+    function getNumberOfMatchingElement(object){
+        return new Promise(function(resolve, reject)
+        {
+            db.find(object, function(err, docs)
+            {
+                if(!err)
+                    resolve(docs.length)
+                else
+                    reject(err)
+            })
+        })
+    }
+    //perfom db insert for new element
+    function saveNew(newOne){
+        return new Promise(function(resolve, reject)
+        {
+            db.insert(newOne, function(err, doc)
+            {
+                if(!err)
+                    resolve(doc)
+                else
+                    reject('Insert failed')
+            })
+        })
+    }
 })

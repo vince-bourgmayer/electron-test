@@ -42,7 +42,7 @@
     <!-- Row to select door -->
     <div class="row" id='carousel'>
         <div class="col-xs-10 col-xs-offset-1">
-            <p id="no-door-text" class="text-center">No door now</p>
+            <p id="empty-text" class="text-center">No door now</p>
             <div id="lockedDoors" >
             </div>
         </div>
@@ -117,7 +117,7 @@
             require(path.resolve('assets/js/script.js'))
             //Function to create the carousel element of a door
             function doorToHtml(door){
-                return "<div class='door'><div><div class='lock-img'></div><h5>"+door.name+"</h5></div></div>"
+                return "<div class='door' id='"+door.name+"'><div><div class='lock-img'></div><h5>"+door.name+"</h5></div></div>"
             }
             //Attach a property (object with name and value) to an object
             function setProperty(source, objet){

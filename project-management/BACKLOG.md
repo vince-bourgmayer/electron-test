@@ -11,7 +11,7 @@
 |  6 | User | ~~get login in clipboard~~         | I don't need to see it     | 3 | 2 |
 |  7 | User | ~~change my password or login~~    | I won't cry if I lost it   | 2 | 2 |
 |  8 | User | search a locked door by name       | to find them quicker       | 4 | 1 |
-|  9 | User | delete a locked door               | to keep only what's needed | 4 | 1 |
+|  9 | User | ~~delete a locked door~~           | to keep only what's needed | 4 | 1 |
 | 10 | User | ~~see my login~~                   | to remember it             | 1 | 1 |
 | 11 | User | ~~see my password~~                | to remember it             | 1 | 1 |
 | 12 | User | ~~select a locked door~~           | to get login and password  | 2 | 2 |
@@ -40,7 +40,7 @@ I will change users stories(US) when first are over. This part is a kind of deli
  3. ~~Users stories : 2 and 3~~
  4. ~~Users stories : 5 and 6~~
  5. ~~Users stories : 4 and 7~~
- 6. Users stories : 8 and 9
+ 6. Users stories : 8 and ~~9~~
  7. Users stories : 13 and 14
 
 
@@ -51,15 +51,11 @@ I will change users stories(US) when first are over. This part is a kind of deli
 _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
-
-
- + 09/10/2017 10:25 - US 1 - Register a new locked door - implement USC 1
  + 21/10/2017 09:34 - US 4 - protect password from other people - Change cipher password or let user define it at installation programm
  + 21/10/2017 17:47 - US 8 - search a locked door by name - get user word to search
  + 21/10/2017 17:47 - US 8 - search a locked door by name - test slick filter
- + 21/10/2017 17:47 - US 9 - delete a locked door - user shouldn't be allowed to click on delete if no door selected
- + 21/10/2017 17:47 - US 9 - delete a locked door - delete from slick
- + 21/10/2017 17:47 - US 9 - delete a locked door - delete from db
+
+
 
 
 
@@ -97,7 +93,11 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 11/10/2017 09:34 - 12/10/2017 16:34 - US 7 - change my password or login
  + 11/10/2017 09:34 - 21/10/2017 17:25 - US 4 - protect password from other people
 --- 
-
+ + 09/10/2017 10:25 - 16/11/2017 16:28 - US 1 - Register a new locked door - implement USC 1
+ + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - delete from slick
+ + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - delete from db
+ + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - user shouldn't be allowed to click on delete if no door selected
+ + 15/11/2017 08:47  - Rewrote code with Promise
 
 
 # Forgiven
