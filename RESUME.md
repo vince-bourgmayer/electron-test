@@ -12,6 +12,8 @@ so I won't try to fix it. Filter button works well.
 
 I allow user to open the link of the current door directly in the official OS browser. (Implementation of US14) thanks to `shell.openExternal(url)`
 
+Change Licence to MIT Licence because I just gave a look at unlicence and I didn't know what it is.
+
 ## 16/11/2017
 Project work as expected for now.
 
