@@ -52,7 +52,8 @@ _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
  + 21/10/2017 09:34 - US 4 - protect password from other people - Change cipher password or let user define it at installation programm
-
+ + 17/11/2017 11:38 - US 13 - generate a password
+ + 17/11/2017 11:38 - US 14 - open web window with url of door
 
 
 # Done
@@ -90,15 +91,15 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 11/10/2017 09:34 - 21/10/2017 17:25 - US 4 - protect password from other people
 --- 
  + 09/10/2017 10:25 - 16/11/2017 16:28 - US 1 - Register a new locked door - implement USC 1
+ + 09/10/2017 10:25 - 16/11/2017 16:28 - US 1 - Register a new locked door - make code better - find a way to handle lockeddoor list
  + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - delete from slick
  + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - delete from db
  + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - user shouldn't be allowed to click on delete if no door selected
- + 15/11/2017 08:47 - 16/11/2017 16:28 - Rewrote code with Promise
  + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - get user word to search
  + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - test slick filter
+---
 
 # Forgiven
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window
 
 # For Later
- + 09/10/2017 10:25 - 21/10/2017 10:32 - US 1 - Register a new locked door - make code better - find a way to handle lockeddoor list
