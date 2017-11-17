@@ -60,7 +60,7 @@
                         <span class="input-group-addon">http://</span>
                         <input type="text" class="form-control update-door-field" placeholder="add a URL" id="url" name="url">
                         <span class="input-group-btn">
-                            <button disabled class="btn btn-secondary" type="button">Open</button>
+                            <button class="btn btn-secondary" type="button" id="open-btn" onclick='openUrl()'>Open</button>
                         </span>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
             document.getElementById("electron-version").innerHTML="Electron "+process.versions.electron
             //Load Jquery
             window.$ =window.jQuery = require('jquery')
-            const {ipcRenderer, clipboard} = require('electron')
+            const {ipcRenderer, clipboard, shell} = require('electron')
             const path = require('path')
             function sendToClipboard(identifier){
                 const text = document.getElementById(identifier).value
@@ -137,6 +137,15 @@
                 for(elt of array){
                     func.apply(this, [elt, args])
                 }
+            }
+            function openUrl(){
+                const url = document.getElementById('url').value
+                if(url.length > 0){
+                    const fullUrl = "http://"+url
+                    shell.openExternal(fullUrl)   
+                }else{
+                    alert('Il n\'y a pas d\'url valide')
+                } 
             }
         </script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

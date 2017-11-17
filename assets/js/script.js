@@ -4,18 +4,18 @@ $(function()
     const crypto = require('crypto')
     const Datastore = require('nedb')
     //Just for test
-    const algo = "aes192"
-    const password = 'toto'
+    const x = "aes192"
+    const y = '6prjXB9etA64tQms'
 
 
     function cryptData( data ){
-        const cipher = crypto.createCipher( algo,password ) //Cipher instance can only crypt one data
+        const cipher = crypto.createCipher( x,y ) //Cipher instance can only crypt one data
         let crypted = cipher.update( data,'utf8','base64' )
         crypted += cipher.final( 'base64' )
         return crypted
     }
     function decryptData( crypted ){
-        const decipher = crypto.createDecipher( algo,password )
+        const decipher = crypto.createDecipher( x,y )
         let data = decipher.update( crypted,'base64','utf8' )
         data += decipher.final( 'utf8' )
         return data
@@ -36,11 +36,11 @@ $(function()
         if(err)
             console.log( 'DB issue while loading Data' )
     })
-    //@To remove when over
-    // db.remove({},{multi:true}, function(err, numRemoved){
-    //     if(err)
-    //         console.log(err.message)
-    // })
+    // @To remove when over
+    db.remove({},{multi:true}, function(err, numRemoved){
+        if(err)
+            console.log(err.message)
+    })
     let slick = $('#lockedDoors').slick({
         centerMode:true,
         slidesToShow:5,

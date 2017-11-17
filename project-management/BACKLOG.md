@@ -16,7 +16,7 @@
 | 11 | User | ~~see my password~~                | to remember it             | 1 | 1 |
 | 12 | User | ~~select a locked door~~           | to get login and password  | 2 | 2 |
 | 13 | User | generate a password                | I won't have to invent one | 5 | 4 |
-| 14 | User | open web window with url of door   | I'll go faster on my site  | 5 | 4 |
+| 14 | User | ~~open browser with url of door~~  | I'll go faster on my site  | 5 | 4 |
 
 
 
@@ -53,7 +53,7 @@ Description will be: Start date, story's identifier, task (optionnal), subtask (
 
  + 21/10/2017 09:34 - US 4 - protect password from other people - Change cipher password or let user define it at installation programm
  + 17/11/2017 11:38 - US 13 - generate a password
- + 17/11/2017 11:38 - US 14 - open web window with url of door
+ 
 
 
 # Done
@@ -98,6 +98,7 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - get user word to search
  + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - test slick filter
 ---
+ + 17/11/2017 11:38 - 17/11/2017 14:36 - US 14 - open web window with url of door
 
 # Forgiven
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window

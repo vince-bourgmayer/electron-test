@@ -5,9 +5,12 @@ Implement filtering on name thanks to `.slick('slickFilter')`. I just bond a fun
 I remove filter button and throw filtering on filter input keyup event and I'll
 make better filtering by make filtering more flexible thanks to `String.prototype.match(regexp)`
 + [Match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
-+ [regexp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) 
++ [regexp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+
 It worked for the match and regexp but not for the keyup event. It's not important
 so I won't try to fix it. Filter button works well.
+
+I allow user to open the link of the current door directly in the official OS browser. (Implementation of US14) thanks to `shell.openExternal(url)`
 
 ## 16/11/2017
 Project work as expected for now.
