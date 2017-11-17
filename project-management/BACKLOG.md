@@ -51,7 +51,7 @@ I will change users stories(US) when first are over. This part is a kind of deli
 _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
- + 21/10/2017 09:34 - US 4 - protect password from other people - Change cipher password or let user define it at installation programm
+
  + 17/11/2017 11:38 - US 13 - generate a password
  
 
@@ -99,6 +99,7 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - test slick filter
 ---
  + 17/11/2017 11:38 - 17/11/2017 14:36 - US 14 - open web window with url of door
+ + 21/10/2017 09:34 - 17/11/2017 14:36 - US 4 - protect password from other people - Change cipher password 
 
 # Forgiven
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window

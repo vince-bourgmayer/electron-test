@@ -36,15 +36,12 @@ $(function()
         if(err)
             console.log( 'DB issue while loading Data' )
     })
-    // @To remove when over
-    db.remove({},{multi:true}, function(err, numRemoved){
-        if(err)
-            console.log(err.message)
-    })
+
     let slick = $('#lockedDoors').slick({
         centerMode:true,
         slidesToShow:5,
         focusOnSelect: true,
+        adaptiveHeight: true,
         prevArrow: "<button type='button' class='slick-prev'><img src='assets/images/left-arrow-red-xs.png'/></button>",
         nextArrow: "<button type='button' class='slick-next'><img src='assets/images/right-arrow-red-xs.png'/></button>"
     })

@@ -27,7 +27,7 @@ function createMainWindow(){
 		slashes:true
 	}))
 	//Show Chrome dev tools
-	mainWindow.webContents.openDevTools()
+	// mainWindow.webContents.openDevTools()
 
 	//free memory when windows is closed
 	mainWindow.on('closed', () => {
