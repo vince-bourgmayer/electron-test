@@ -10,7 +10,7 @@
 |  5 | User | ~~get password in clipboard~~      | I don't need to see it     | 3 | 2 |
 |  6 | User | ~~get login in clipboard~~         | I don't need to see it     | 3 | 2 |
 |  7 | User | ~~change my password or login~~    | I won't cry if I lost it   | 2 | 2 |
-|  8 | User | search a locked door by name       | to find them quicker       | 4 | 1 |
+|  8 | User | ~~search a locked door by name~~   | to find them quicker       | 4 | 1 |
 |  9 | User | ~~delete a locked door~~           | to keep only what's needed | 4 | 1 |
 | 10 | User | ~~see my login~~                   | to remember it             | 1 | 1 |
 | 11 | User | ~~see my password~~                | to remember it             | 1 | 1 |
@@ -40,7 +40,7 @@ I will change users stories(US) when first are over. This part is a kind of deli
  3. ~~Users stories : 2 and 3~~
  4. ~~Users stories : 5 and 6~~
  5. ~~Users stories : 4 and 7~~
- 6. Users stories : 8 and ~~9~~
+ 6. ~~Users stories : 8 and 9~~
  7. Users stories : 13 and 14
 
 
@@ -52,10 +52,6 @@ _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
  + 21/10/2017 09:34 - US 4 - protect password from other people - Change cipher password or let user define it at installation programm
- + 21/10/2017 17:47 - US 8 - search a locked door by name - get user word to search
- + 21/10/2017 17:47 - US 8 - search a locked door by name - test slick filter
-
-
 
 
 
@@ -97,8 +93,9 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - delete from slick
  + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - delete from db
  + 21/10/2017 17:47 - 16/11/2017 16:28 - US 9 - delete a locked door - user shouldn't be allowed to click on delete if no door selected
- + 15/11/2017 08:47  - Rewrote code with Promise
-
+ + 15/11/2017 08:47 - 16/11/2017 16:28 - Rewrote code with Promise
+ + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - get user word to search
+ + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - test slick filter
 
 # Forgiven
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window

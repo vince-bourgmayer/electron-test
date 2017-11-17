@@ -1,4 +1,14 @@
 # Resume of projet's progress
+## 17/11/2017
+Implement filtering on name thanks to `.slick('slickFilter')`. I just bond a function once the filter button is clicked. The function get filter input value and check if element id match the string. But I'm not totaly satisfied.
+
+I remove filter button and throw filtering on filter input keyup event and I'll
+make better filtering by make filtering more flexible thanks to `String.prototype.match(regexp)`
++ [Match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
++ [regexp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) 
+It worked for the match and regexp but not for the keyup event. It's not important
+so I won't try to fix it. Filter button works well.
+
 ## 16/11/2017
 Project work as expected for now.
 
@@ -51,7 +61,7 @@ _NB:_
 
 
 ## 18/10/2017
- I took back function from script.js and put them into index.html til I'll make a special file. Because there was no reason that this function had to wait that document is ready to be loaded. I've no indicator but it seems to be faster at start.
+I took back function from script.js and put them into index.html til I'll make a special file. Because there was no reason that this function had to wait that document is ready to be loaded. I've no indicator but it seems to be faster at start.
 
 ## 16/10/2017
 After a little break, I come back. I choose a picture to represent the "locked door" which is te website or things for what we need a password and login to access. I did it with google and a search on pictures which can be used for non commercial project. Then I made little change in UI again.

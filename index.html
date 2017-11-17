@@ -12,7 +12,7 @@
 <body style="background-color: lightgray" class="container-fluid">
     <!-- Row to create a new door or to filter -->
     <div class="row" id="create-and-filter-zone">
-        <div class="col-xs-4">
+        <div class="col-xs-6">
             <div class="input-group">
                 <input type="text" placeholder="Name..." aria-label="Name..." class="form-control new-door-field" name="name" id="nameField"/>
                  <span class="input-group-btn">
@@ -20,21 +20,21 @@
                 </span>
             </div>
         </div>
-        <div class="col-xs-8">
-            <div class="col-xs-5">
+        <div class="col-xs-6">
+            <div class="col-xs-10">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">name?</span>
-                    <input type="search" placeholder="filter on name" class="form-control" disabled/>
+                    <input type="search" placeholder="filter on name" class="form-control" id="name-filter-field" />
                 </div>
             </div>
-            <div class="col-xs-5">
+<!--             <div class="col-xs-5">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">tags?</span>
                     <input type="text" placeholder="filter on category" class="form-control" name="categories[]" disabled/>
                 </div>
-            </div>
+            </div> -->
             <div class="col-xs-2">
-                <button class="btn btn-secondary" disabled>Filter</button>
+                <button class="btn btn-secondary" id="filter-btn">Filter</button>
             </div>
         </div>
     </div>
