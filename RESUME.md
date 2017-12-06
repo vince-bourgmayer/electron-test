@@ -1,4 +1,25 @@
 # Resume of projet's progress
+
+## 05/12/2017
+I still have to implement a way to generate a password. 
+I gave a look at CNIL's advise about how to make a good password:
++ 12+ char
++ at least one char of each type (min, maj, numb, spec)
++ no personnal information
+This isn't very difficult, but in the end, I decided that generate a password isn't a needed tool.
+I consider that my app is over.
+
+## 30/11/2017
+I changed input type of "password" from "text" to "password", so password is printed as star or point.
+Password is not visible anymore by an external spy who can look over your shoulder to catch your password! (I joke)
+
+## ??/11/2017
+I tried to generate final apps. I read many tuto and tips, tried `electron-builder` and `electron-packager`, and
+after some issues, I finally generated my windows installer. But in first trials, code of the app was accessible in the distribution. So I used option to make an `asar`archive of the code. So code is hidden.
+
+Apps installed well on my computer, but size of the final app is around 140 Mo (for windows) which is too much...
+I coded around 880 Ko and got an app of 140 Mo...I looked on the web on how to reduce, but I didn't really understood what some people did to get a lighter app.
+
 ## 17/11/2017
 Implement filtering on name thanks to `.slick('slickFilter')`. I just bond a function once the filter button is clicked. The function get filter input value and check if element id match the string. But I'm not totaly satisfied.
 

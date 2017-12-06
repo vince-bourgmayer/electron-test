@@ -6,7 +6,7 @@
 |  1 | User | ~~register new locked door~~       | I can order my password    | 2 | 3 |
 |  2 | User | ~~register new password~~          | I can refind them easily   | 1 | 1 |
 |  3 | User | ~~register new login~~             | I can refind them easily   | 1 | 1 |
-|  4 | User | protect password from other people | I can sleep on my two ears | 4 | 4 |
+|  4 | User | ~~protect password from spy~~      | I can sleep on my two ears | 4 | 4 |
 |  5 | User | ~~get password in clipboard~~      | I don't need to see it     | 3 | 2 |
 |  6 | User | ~~get login in clipboard~~         | I don't need to see it     | 3 | 2 |
 |  7 | User | ~~change my password or login~~    | I won't cry if I lost it   | 2 | 2 |
@@ -15,7 +15,7 @@
 | 10 | User | ~~see my login~~                   | to remember it             | 1 | 1 |
 | 11 | User | ~~see my password~~                | to remember it             | 1 | 1 |
 | 12 | User | ~~select a locked door~~           | to get login and password  | 2 | 2 |
-| 13 | User | generate a password                | I won't have to invent one | 5 | 4 |
+| 13 | User | ~~generate a password~~            | I won't have to invent one | 5 | 4 |
 | 14 | User | ~~open browser with url of door~~  | I'll go faster on my site  | 5 | 4 |
 
 
@@ -41,7 +41,7 @@ I will change users stories(US) when first are over. This part is a kind of deli
  4. ~~Users stories : 5 and 6~~
  5. ~~Users stories : 4 and 7~~
  6. ~~Users stories : 8 and 9~~
- 7. Users stories : 13 and 14
+ 7. Users stories : 13 and ~~14~~
 
 
 # User story Constraint (USC)
@@ -51,10 +51,7 @@ I will change users stories(US) when first are over. This part is a kind of deli
 _Here is the list of the current users stories and tasks.
 Description will be: Start date, story's identifier, task (optionnal), subtask (optionnal)_
 
-
- + 17/11/2017 11:38 - US 13 - generate a password
- 
-
+	Project over.
 
 # Done
 _Here is the list of the already done users stories and tasks.
@@ -98,10 +95,14 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - get user word to search
  + 21/10/2017 17:47 - 17/11/2017 09:50 - US 8 - search a locked door by name - test slick filter
 ---
- + 17/11/2017 11:38 - 17/11/2017 14:36 - US 14 - open web window with url of door
  + 21/10/2017 09:34 - 17/11/2017 14:36 - US 4 - protect password from other people - Change cipher password 
-
+ + 21/10/2017 09:34 - 30/11/2017 15:50 - US 4 - protect password from other people - Change password input from text to password 
+ + 17/11/2017 11:38 - 17/11/2017 14:36 - US 14 - open web window with url of door
+ ---
+ The end
+ 
 # Forgiven
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window
+ + 17/11/2017 11:38 - 06/12/2017 12:28 - US 13 - generate a password
 
 # For Later
