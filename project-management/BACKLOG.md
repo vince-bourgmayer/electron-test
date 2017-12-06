@@ -41,7 +41,7 @@ I will change users stories(US) when first are over. This part is a kind of deli
  4. ~~Users stories : 5 and 6~~
  5. ~~Users stories : 4 and 7~~
  6. ~~Users stories : 8 and 9~~
- 7. Users stories : 13 and ~~14~~
+ 7. ~~Users stories : 13 and 14~~
 
 
 # User story Constraint (USC)
@@ -101,7 +101,7 @@ Description will be: Start date, End date, story's identifier, task (optionnal),
  ---
  The end
  
-# Forgiven
+# Forsaken
  + 29/09/2017 21:58 - 07/10/2017 17:21 - US 1 - Register a new locked door - update UI - get data from modal window
  + 17/11/2017 11:38 - 06/12/2017 12:28 - US 13 - generate a password
 
